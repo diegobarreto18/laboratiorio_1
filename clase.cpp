@@ -8,7 +8,7 @@ class Clase {
     private: 
         int id;
         string nombre;
-        //Turno turno;
+        Turno turno;
     public:
         int cupo();
 }

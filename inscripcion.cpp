@@ -6,7 +6,6 @@
 
 class Inscripcion {
     private: 
-       //Fecha fecha; ---> Comentado por tener que hacer el datatype
+       Fecha fecha;
     public:
-
 }

@@ -9,5 +9,4 @@ class Entrenamiento: public Clase{
     private:
         bool enRambla;
     public:
-        //+CUPO() - INT
 }

@@ -9,6 +9,4 @@ class Fecha {
         int mes;
         int anio;
     public:
-
-
 }

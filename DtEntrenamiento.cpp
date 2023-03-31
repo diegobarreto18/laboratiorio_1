@@ -7,8 +7,4 @@ class DtEntrenamiento{
     private: 
         bool enRambla;
     public:
-
 }
-
-
-//enRambla BOOLEAN

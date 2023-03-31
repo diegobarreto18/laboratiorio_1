@@ -9,5 +9,4 @@ class Socio{
         string ci;
         string nombre;
     public:
-
 }

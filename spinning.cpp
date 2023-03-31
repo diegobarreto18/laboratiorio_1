@@ -7,6 +7,4 @@ class Spinning: public Clase{
     private:
         int cantBicletas;
     public:
-        // +CUPO() : INT
-
 }
