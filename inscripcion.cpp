@@ -7,5 +7,23 @@
 class Inscripcion {
     private: 
        Fecha fecha;
+    /*
+    Hay que controlar las fechas a la hora de insertarlas. 
+     
+     1 < Dia < 31
+     1 < Mes < 12
+         Año < 1900
+    
+        Tirar excepción std::invalid_argument ????? wtf carlos
+    */
     public:
+
 }
+
+
+/* 
+    
+    De cada inscripción se conoce el socio.
+    La clase del gimnasio a la cual se inscribe y fecha de realización
+
+*/
