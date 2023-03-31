@@ -1,0 +1,3 @@
+// ID - INT
+// NOMBRE - STRING
+// TURNO - TURNO
