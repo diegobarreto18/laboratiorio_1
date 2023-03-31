@@ -1,3 +1,14 @@
-// DIA - INT
-// MES - INT
-// ANIO - INT
+#include "define.h"
+#include <iostream>
+#include "string.h"
+
+
+class Fecha {
+    private:
+        int dia;
+        int mes;
+        int anio;
+    public:
+
+
+}

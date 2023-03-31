@@ -1,6 +1,13 @@
-// ENRAMBLA - BOOLEAN
+#include "define.h"
+#include <iostream>
+#include "string.h"
+#include "entrenamiento.h"
+#include "clase.h"
 
 
-//+CUPO() - INT
-
-
+class Entrenamiento: public Clase{
+    private:
+        bool enRambla;
+    public:
+        //+CUPO() - INT
+}

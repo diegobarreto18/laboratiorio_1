@@ -1,7 +1,7 @@
-// ID -INT
-// NOMBRE - STRING
-// TURNO - TURNO
+#include "define.h"
+#include <iostream>
+#include "string.h"
 
 
-
-// +CUPO() - INT
+// +CUPO() - INT 
+//hacer el typedef  (?
