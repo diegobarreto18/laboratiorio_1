@@ -1,0 +1,1 @@
+#define MAX_COMANDO 128
