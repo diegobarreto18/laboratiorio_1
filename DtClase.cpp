@@ -1,13 +1,6 @@
 #include "define.h"
 #include <iostream>
-#include "string.h"
+#include <string.h>
+#include "DtClase.h"
 
 
-class DtClase {
-    private:
-        int id;
-        string nombre;
-        Turno turno;
-    public:
-
-}

@@ -3,16 +3,11 @@
 #include <string.h>
 
 
-
-class Socio{
+class DtClase {
     private:
-        string ci;
-        string nombre;
+        int id;
+        char nombre;
+        Turno turno;
     public:
+
 }
-
-
-
-
-
-

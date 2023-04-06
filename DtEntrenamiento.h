@@ -1,16 +1,10 @@
 #include "define.h"
 #include <iostream>
 #include <string.h>
-#include "clase.h"
 
 
-
-
-class Entrenamiento: public Clase{
-    private:
+class DtEntrenamiento{
+    private: 
         bool enRambla;
     public:
-        int cupo();
 }
-
-

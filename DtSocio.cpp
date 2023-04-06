@@ -1,12 +1,6 @@
 #include "define.h"
 #include <iostream>
-#include "string.h"
+#include <string.h>
+#include "DtSocio.h"
 
 
-class DtSocio {
-    private: 
-        int ci;
-        string nombre;
-    public:
-
-}

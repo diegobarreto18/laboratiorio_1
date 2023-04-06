@@ -1,188 +1,108 @@
-#include "main.h"
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "define.h"
 #include <iostream>
 #include <string.h>
+#include "clase.h"
+#include "socio.h"
+#define MAX_SOCIOS 100
+#define MAX_CLASES 100
 
-using namespace std;
+struct Clases
+{
+    Clase *c[MAX_CLASES];
+    // int tope;
+} colClases;
+
+struct Socios
+{
+    Socio *s[MAX_SOCIOS];
+    // int top;
+} colSocios;
+
+void agregarSocio(string ci, string nombre)
+{
+    // Crea un nuevo socio en el sistema. En caso de ya existir, levanta excepción std::invalid_argument
+}
+
+void agregarClase(DtClase &clase)
+{
+    // Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción std::invalid:argument
+}
+
+void agregarInscripcion(string ciSocio, int idCalse, FEcha fecha)
+{
+
+    /*
+        Crea una inscripción de un socio a una clase. La inscripción tiene lugar siempre y cuando el socio y
+        la clase existan, de lo contrario se levanta una excepción std::invalid_argument. Si ya existe una
+        inscripción de ese usuario para esa clase, o si el cupo de esa clase ya fue alcanzado, también se
+        levanta una excepción std::invalid_argument.
+    */
+}
+
+void borrarInscripcion(string ciSocio, int idClase)
+{
+
+    /*
+        Borra la inscripción de un socio a una clase. Si no existe una inscripción de ese usuario para esa
+        clase, se levanta una excepción std::invalid_argument.
+    */
+}
+/*
+
+ESTO SERÍA LO QUE DEBERIAMOS HACER COMO CLASE MAIN ... creo
+
+TipoRet createTable (bd & bd, char *nombreTabla){
+    //cout << " - createTable " << nombreTabla << endl
+    return crearTabla_Tablas(bd->ts, nombreTabla);
+}
+
+TipoRet dropTable (bd & bd, char *nombreTabla){
+    //cout << " - dropTable " << nombreTabla << endl;;
+    return NO_IMPLEMENTADA;
+}
+*/
+
+void menu()
+{
+    system("clear");
+    cout << "____________________________" << endl;
+    cout << "_________MENU___________" << endl;
+    cout << "1. Agregar Socio" << endl;
+    cout << "2. Agregar Clase" << endl;
+    cout << "3. Agregar Inscripcion" << endl;
+    cout << "4. Borrar Inscripcion" << endl;
+    cout << "5. Salir" << endl;
+    cout << "OPCION: ";
+}
 
 int main()
 {
-	//bd bd = createBD();
-	char * comando = new (char[MAX_COMANDO]);
-	char * pch, * pch1, * pch2, *pch3, *pch4;
-	bool ejecutado = false;
 
-	bool salir = false;
-	
-	do{
-		cout << "\tcreateTable(nombreTabla)\n";
-		cout << "\tsalir()\n\n";
-		cout << "> ";
-		fflush( stdin );
-		ejecutado = false;
-		
-		fgets (comando, MAX_COMANDO, stdin);
-
-		pch = strtok (comando,"( ,)");
-
-		if (strcasecmp (pch, "createTable") == 0){
-			pch = strtok (NULL, "( ,)");
-			if (pch != NULL){
-				cout << "Acá va la primera opción" << endl;
-				// ret = createTable (bd, pch);
-				// ejecutado = true;
-			}
-			else
-				cout << " - ERROR: Faltan Parametros.\n";
-		}
-		else if (strcasecmp (pch, "dropTable") == 0){
-			pch = strtok (NULL, "( ,)");
-			if (pch != NULL){
-				cout << "Acá va la segunda opción" << endl;
-				// ret = dropTable (bd, pch);
-				// ejecutado = true;
-			}
-			else
-				cout << " - ERROR: Faltan Parametros.\n";
-		}
-		else if (strcasecmp (pch, "addCol") == 0){
-			pch = strtok (NULL, "( ,)");
-			if (pch != NULL){
-				pch1 = strtok (NULL, "( ,)");
-				if (pch1 != NULL){
-					pch2 = strtok (NULL, "( ,)");
-					if (pch2 != NULL){
-						pch3 = strtok (NULL, "( ,)");
-						if (pch3 != NULL){
-							cout << "Acá va la tercera opción" << endl;
-							//ret = addCol (bd, pch, pch1, pch2, pch3);
-							//ejecutado = true;
-						}
-						else
-							cout << " - ERROR: Faltan Parametros.\n";
-					}
-					else
-						cout << " - ERROR: Faltan Parametros.\n";
-				}
-				else
-					cout << " - ERROR: Faltan Parametros.\n";
-			}
-			else
-				cout << " - ERROR: Faltan Parametros.\n";
-		}
-		else if (strcasecmp (pch, "alterCol") == 0){
-			pch = strtok (NULL, "( ,)");
-			if (pch != NULL){
-				pch1 = strtok (NULL, "( ,)");
-				if (pch1 != NULL){
-					pch2 = strtok (NULL, "( ,)");
-					if (pch2 != NULL){
-						pch3 = strtok (NULL, "( ,)");
-						if (pch3 != NULL){
-							pch4 = strtok (NULL, "( ,)");
-							if (pch4 != NULL){
-								cout << "Acá va la cuarta opción" << endl;
-								//ret = alterCol (bd, pch, pch1, pch2, pch3, pch4);
-								//ejecutado = true;
-							}
-							else
-								cout << " - ERROR: Faltan Parametros.\n";
-						}
-						else
-							cout << " - ERROR: Faltan Parametros.\n";
-					}
-					else
-						cout << " - ERROR: Faltan Parametros.\n";
-				}
-				else
-					cout << " - ERROR: Faltan Parametros.\n";
-			}
-			else
-				cout << " - ERROR: Faltan Parametros.\n";
-		}
-
-		else if (strcasecmp (pch, "dropCol") == 0){
-			pch = strtok (NULL, "( ,)");
-			if (pch != NULL)
-			{
-				pch1 = strtok (NULL, "( ,)");
-				if (pch1 != NULL){
-					cout << "Acá va la quinta opción" << endl;
-					//ret = dropCol (bd, pch, pch1);
-					//ejecutado = true;
-				}
-				else
-					cout << " - ERROR: Faltan Parametros.\n";
-			}
-			else
-				cout << " - ERROR: Faltan Parametros.\n";
-		}
-		else if (strcasecmp (pch, "insertInto") == 0){
-			pch = strtok (NULL, "( ,)");
-			if (pch != NULL){
-				pch1 = strtok (NULL, "( ,)");
-				if (pch1 != NULL){
-					pch2 = strtok (NULL, "( ,)");
-					if (pch2 != NULL){
-						cout << "Acá va la sexto opción" << endl;
-						//ret = insertInto (bd, pch, pch1, pch2);
-						//ejecutado = true;
-					}
-					else
-						cout << " - ERROR: Faltan Parametros.\n";
-				}
-				else
-					cout << " - ERROR: Faltan Parametros.\n";
-			}
-			else
-				cout << " - ERROR: Faltan Parametros.\n";
-		}
-		else if (strcasecmp (pch, "deleteFrom") == 0){
-			pch = strtok (NULL, "( ,)");
-			if (pch != NULL){
-				pch1 = strtok (NULL, "( ,)");
-				if (pch1 != NULL){
-					cout << "Acá va la septima opción" << endl;
-					//ret = deleteFrom (bd, pch, pch1);
-					//ejecutado = true;
-				}
-				else
-					cout << " - ERROR: Faltan Parametros.\n";
-			}
-			else
-				cout << " - ERROR: Faltan Parametros.\n";
-		}
-		else if (strcasecmp (pch, "update") == 0){
-			pch = strtok (NULL, "( ,)");
-			if (pch != NULL){
-				pch1 = strtok (NULL, "( ,)");
-				if (pch1 != NULL){
-					pch2 = strtok (NULL, "( ,)");
-					if (pch2 != NULL){
-						pch3 = strtok (NULL, "( ,)");
-						if (pch3 != NULL){
-							cout << "Acá va la octava opción" << endl;
-							//ret = update (bd, pch, pch1, pch2, pch3);
-							//ejecutado = true;
-						}
-						else
-							cout << " - ERROR: Faltan Parametros.\n";
-					}
-					else
-						cout << " - ERROR: Faltan Parametros.\n";
-				}
-				else
-					cout << " - ERROR: Faltan Parametros.\n";
-			}
-			else
-				cout << " - ERROR: Faltan Parametros.\n";
-		}
-
-	}while (!salir);
-	cout << "\n\n - CHAUU!!!!\n";
-
-	//bd = destroyBD(bd);
-	delete [] comando;
+    menu();
+    int opcion;
+    cin >> opcion;
+    while (opcion != 7)
+    {
+        switch (opcion)
+        {
+        case 1:
+            menuRegistrarVengador();
+            break;
+        case 2:
+            menuCrearMision();
+            break;
+        case 3:
+            menuAsignarMisionAVengador();
+            break;
+        case 4:
+            listarVengadores();
+            break;
+        case 5:
+            listarMisiones();
+            break;
+        case 6:
+            menuListarMisionesDeVengador();
+            break;
+        }
+    }
 }

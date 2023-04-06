@@ -4,15 +4,10 @@
 
 
 
-class Socio{
+
+class DtSpinning {
     private:
-        string ci;
-        string nombre;
+        int cantBicicletas;
     public:
+
 }
-
-
-
-
-
-

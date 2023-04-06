@@ -1,14 +1,9 @@
 #include "define.h"
 #include <iostream>
 #include "spinning.h"
-#include "string.h"
+#include <string.h>
 
-class Spinning: public Clase{
-    private:
-        int cantBicletas;
-    public:
-        int cupo();
-}
+
 
 int Spinning::cupo(){
     //Operación que calcula la cantidad de cupos que tiene una clase

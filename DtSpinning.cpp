@@ -1,11 +1,7 @@
 #include "define.h"
 #include <iostream>
-#include "string.h"
+#include <string.h>
+#include "DtSpinning.h"
 
 
-class DtSpinning {
-    private:
-        int cantBicicletas;
-    public:
 
-}

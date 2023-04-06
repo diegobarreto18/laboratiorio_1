@@ -2,6 +2,7 @@
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
         "string": "cpp",
-        "unistd.h": "c"
+        "unistd.h": "c",
+        "ostream": "cpp"
     }
 }

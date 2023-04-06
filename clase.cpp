@@ -1,17 +1,13 @@
 #include "define.h"
-#include <iostream>
-#include "string.h"
 #include "clase.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <string.h>
+#include <typeinfo>
 
 
-class Clase {
-    private: 
-        int id;
-        string nombre;
-        Turno turno;
-    public:
-        int cupo();
-}
 
 int Clase::cupo(){
     //Operación que calcula la cantidad de cupos que tiene una clase

@@ -1,16 +1,11 @@
 #include "define.h"
 #include <iostream>
-#include "string.h"
+#include <string.h>
 #include "entrenamiento.h"
 #include "clase.h"
 
 
-class Entrenamiento: public Clase{
-    private:
-        bool enRambla;
-    public:
-        int cupo();
-}
+
 
 int Entrenamiento::cupo(){
     //Operación que calcula la cantidad de cupos que tiene una clase

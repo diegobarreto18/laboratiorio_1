@@ -1,5 +1,6 @@
-#define DEFINE_H
 #ifndef DEFINE_H
+#define DEFINE_H
+
 
 // define.h
 // Modulo de Definiciones Generales.
