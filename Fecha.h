@@ -2,13 +2,21 @@
 #include <iostream>
 #include <string.h>
 
+class Fecha
+{
+private:
+    int dia;
+    int mes;
+    int anio;
 
-class Fecha {
-    private:
-        int dia;
-        int mes;
-        int anio;
-
-    public:
-    
+public:
+    Fecha();
+    Fecha(int dia, int mes, int anio);
+    int getDia();
+    void setDia(int dia);
+    int getMes();
+    void setMes(int mes);
+    int getAnio();
+    void setAnio(int anio);
+    ~Fecha();
 }

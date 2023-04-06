@@ -3,14 +3,16 @@
 #include <string.h>
 #include "clase.h"
 
+class Entrenamiento : public Clase
+{
+private:
+    bool enRambla;
 
-
-
-class Entrenamiento: public Clase{
-    private:
-        bool enRambla;
-    public:
-        int cupo();
+public:
+    Entrenamiento();
+    Entrenamiento(bool enRambla);
+    bool getEnRambla();
+    void setEnRambla(bool enRambla);
+    ~Entrenamiento();
+    int cupo();
 }
-
-

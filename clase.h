@@ -2,17 +2,22 @@
 #include <iostream>
 #include <string.h>
 
+class Clase
+{
+private:
+    int id;
+    string nombre;
+    Turno turno;
 
-class Clase {
-    private:
-        int id;
-        string nombre;
-        Turno turno;
-    public:
-        int cupo();
-
+public:
+    Clase();
+    Clase(int id, string nombre, Turno turno);
+    int getId();
+    void setId(int id);
+    string getNombre();
+    void setNombre(string nombre);
+    Turno getTurno();
+    void setTurno(Turno turno);
+    ~Clase();
+    int cupo();
 }
-
-
-// +CUPO() - INT 
-//hacer el typedef  (?

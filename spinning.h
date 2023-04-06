@@ -6,6 +6,11 @@ class Spinning: public Clase{
     private:
         int cantBicletas;
     public:
-        int cupo();
+    Spinning();
+    Spinning(int cantBicicletas);
+    int getCantBicicletas();
+    void setCantBicicletas(int cantBicicletas);
+    ~Spinning();
+    int cupo();
 }
 

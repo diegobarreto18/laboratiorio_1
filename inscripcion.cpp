@@ -1,13 +1,27 @@
-#include "define.h"
 #include <iostream>
 #include "inscripcion.h"
 #include <string.h>
 
+Inscripcion::Inscripcion(){}
 
+Inscripcion::Inscripcion(Fecha fecha)
+{
+    this->fecha = fecha;
+}
 
+string Inscripcion::getFecha()
+{
+    return this->fecha;
+}
+void Inscripcion::setFecha(Fecha fecha)
+{
+    this->fecha = fecha;
+}
 
-/* 
-    
+Inscripcion::~Inscripcion() {}
+
+/*
+
     De cada inscripción se conoce el socio.
     La clase del gimnasio a la cual se inscribe y fecha de realización
 

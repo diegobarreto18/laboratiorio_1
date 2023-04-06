@@ -2,12 +2,15 @@
 #include <iostream>
 #include <string.h>
 
+class DtSpinning
+{
+private:
+    int cantBicicletas;
 
-
-
-class DtSpinning {
-    private:
-        int cantBicicletas;
-    public:
-
+public:
+    DtSpinning();
+    DtSpinning(int cantBicicletas);
+    int getCantBicicletas();
+    void setCantBicicletas(int cantBicicletas);
+    ~DtSpinning();
 }
