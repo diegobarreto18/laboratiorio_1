@@ -7,7 +7,7 @@ class Inscripcion
 {
 private:
     Fecha fecha;
-    Socio* socios[];
+    Socio* socio;
     /*
     Hay que controlar las fechas a la hora de insertarlas.
 
@@ -19,7 +19,7 @@ private:
     */
 public:
     Inscripcion();
-    Inscripcion(Fecha fecha);
+    Inscripcion(Fecha fecha, Socio* socio);
     Fecha getFecha();
     void setFecha(Fecha fecha);
     ~Inscripcion();

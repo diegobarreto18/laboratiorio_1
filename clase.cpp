@@ -42,6 +42,8 @@ void Clase::setTurno(Turno turno)
 
 Clase::~Clase() {}
 
+
+
 int Clase::cupo()
 {
   // Operación que calcula la cantidad de cupos que tiene una clase

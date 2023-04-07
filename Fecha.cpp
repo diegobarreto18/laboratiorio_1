@@ -18,7 +18,6 @@ int DtFecha::getDia()
 {
     return this->dia;
 }
-
 void DtFecha::setDia(int dia)
 {
     if (dia < 1 || dia > 31)
@@ -26,12 +25,10 @@ void DtFecha::setDia(int dia)
     else
         this->dia = dia;
 }
-
 int DtFecha::getMes()
 {
     return this->mes;
 }
-
 void DtFecha::setMes(int mes)
 {
     if (mes < 1 || mes > 12)
@@ -40,7 +37,7 @@ void DtFecha::setMes(int mes)
         this->mes = mes;
 }
 int DtFecha::getAnio()
-{
+{   
     return this->anio;
 }
 void DtFecha::setAnio(int anio)
@@ -50,5 +47,3 @@ void DtFecha::setAnio(int anio)
     else
         this->anio = anio;
 }
-
-DtFecha::~DtFecha() {}
