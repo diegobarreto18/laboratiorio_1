@@ -4,7 +4,7 @@
 
 DtSpinning::DtSpinning() {}
 
-DtSpinning::DtSpinning(int cantBicicletas)
+DtSpinning::DtSpinning(int cantBicicletas):Clase(id, nombre, turno)
 {
     this->cantBicicletas = cantBicicletas;
 }

@@ -4,7 +4,7 @@
 
 DtEntrenamiento::DtEntrenamiento() {}
 
-DtEntrenamiento::DtEntrenamiento(bool enRambla)
+DtEntrenamiento::DtEntrenamiento(bool enRambla):Clase(id, nombre, turno)
 {
   this->enRambla = enRambla;
 }

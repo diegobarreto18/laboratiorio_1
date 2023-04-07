@@ -8,7 +8,7 @@ class DtEntrenamiento{
         bool enRambla;
     public:
         DtEntrenamiento();
-        DtEntrenamiento(bool enRambla);
+        DtEntrenamiento(int id, string nombre, Turno turno,bool enRambla);
         string getEnRambla();
         void setEnRambla();
         ~DtEntrenamiento();

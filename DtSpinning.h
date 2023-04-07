@@ -9,7 +9,7 @@ private:
 
 public:
     DtSpinning();
-    DtSpinning(int cantBicicletas);
+    DtSpinning(int id, string nombre, Turno turno,int cantBicicletas);
     int getCantBicicletas();
     void setCantBicicletas(int cantBicicletas);
     ~DtSpinning();
