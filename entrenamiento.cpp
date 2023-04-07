@@ -5,7 +5,7 @@
 
 Entrenamiento::Entrenamiento() {}
 
-Entrenamiento::Entrenamiento(bool enRambla)
+Entrenamiento::Entrenamiento(bool enRambla):Clase(id, nombre, turno)
 {
     this->enRambla = enRambla;
 }

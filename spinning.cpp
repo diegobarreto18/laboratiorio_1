@@ -4,7 +4,7 @@
 
 Spinning::Spinning() {}
 
-Spinning::Spinning(int cantBicicletas)
+Spinning::Spinning(int cantBicicletas):Clase(id, nombre, turno)
 {
   this->cantBicicletas = cantBicicletas;
 }

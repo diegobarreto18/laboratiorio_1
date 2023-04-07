@@ -7,6 +7,7 @@ class Inscripcion
 {
 private:
     Fecha fecha;
+    Socio* socios[];
     /*
     Hay que controlar las fechas a la hora de insertarlas.
 

@@ -3,13 +3,14 @@
 #include <string.h>
 
 
-class DtEntrenamiento{
+class DtEntrenamiento: public DtClase
+{
     private: 
         bool enRambla;
     public:
         DtEntrenamiento();
         DtEntrenamiento(int id, string nombre, Turno turno,bool enRambla);
         string getEnRambla();
-        void setEnRambla();
+        void setEnRambla(bool enRambla);
         ~DtEntrenamiento();
 }

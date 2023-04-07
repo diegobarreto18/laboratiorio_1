@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string.h>
 
-class DtSpinning
+class DtSpinning : public DtClase
 {
 private:
     int cantBicicletas;

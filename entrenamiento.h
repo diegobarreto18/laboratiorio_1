@@ -10,7 +10,7 @@ private:
 
 public:
     Entrenamiento();
-    Entrenamiento(bool enRambla);
+    Entrenamiento(int id, string nombre, Turno turno,bool enRambla);
     bool getEnRambla();
     void setEnRambla(bool enRambla);
     ~Entrenamiento();
