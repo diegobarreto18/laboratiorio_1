@@ -18,6 +18,7 @@ int DtFecha::getDia()
 {
     return this->dia;
 }
+
 void DtFecha::setDia(int dia)
 {
     if (dia < 1 || dia > 31)
@@ -25,13 +26,18 @@ void DtFecha::setDia(int dia)
     else
         this->dia = dia;
 }
+
 int DtFecha::getMes()
 {
     return this->mes;
 }
+
 void DtFecha::setMes(int mes)
 {
-    this->mes = mes;
+    if (mes < 1 || mes > 12)
+        throw invalid_argument("El mes no puede ser así\n");
+    else
+        this->mes = mes;
 }
 int DtFecha::getAnio()
 {
@@ -39,6 +45,10 @@ int DtFecha::getAnio()
 }
 void DtFecha::setAnio(int anio)
 {
-    this->anio = anio;
+    if (anio < 1900)
+        throw invalid_argument("El año no puede ser menor a 1900\n");
+    else
+        this->anio = anio;
 }
+
 DtFecha::~DtFecha() {}
