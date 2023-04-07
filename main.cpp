@@ -2,29 +2,63 @@
 #include <string.h>
 #include "clase.h"
 #include "socio.h"
+#include "DtClase.h"
+#include "DtEntrenamiento.h"
+#include "DtSocio.h"
+#include "DtSpinning.h"
 #define MAX_SOCIOS 100
 #define MAX_CLASES 100
 
 struct Clases
 {
     Clase *c[MAX_CLASES];
-    // int tope;
+    int tope;
+
 } colClases;
 
 struct Socios
 {
     Socio *s[MAX_SOCIOS];
-    // int top;
+    int tope;
+
 } colSocios;
 
 void agregarSocio(string ci, string nombre)
 {
-    // Crea un nuevo socio en el sistema. En caso de ya existir, levanta excepción std::invalid_argument
+ // Crea un nuevo socio en el sistema. En caso de ya existir, levanta excepción std::invalid_argument
+    int i = 0;
+    while (i < colSocios.tope && colSocios.v[i]->getNombre() != nombre)
+        i++;
+    if (i == colSocios.tope)
+    {
+        Socio *socio = new Socio(ci, nombre);
+        colSocios.s[colSocios.tope] = socio;
+        colSocios.tope++;
+    }
+    else
+    {
+        throw invalid_argument("Ya existe un Socio con ese nombre!!");
+    }
+
 }
 
 void agregarClase(DtClase &clase)
 {
     // Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción std::invalid:argument
+    // EJEMPLO TOMADO DE LOS VENGADORES
+    int i = 0;
+    while (i < colClases.tope && colClases.v[i]->getNombre() != nombre)
+        i++;
+    if (i == colClases.tope)
+    {
+        DtClase *dtclase = new DtClase(clase.id, clase.nombre, clase.turno);
+        colClases.c[colClases.tope] = dtclase;
+        colClases.tope++;
+    }
+    else
+    {
+        throw invalid_argument("Ya existe una Clase con ese nombre!!");
+    }
 }
 
 void agregarInscripcion(string ciSocio, int idCalse, FEcha fecha)
