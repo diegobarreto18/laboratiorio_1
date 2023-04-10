@@ -1,7 +1,11 @@
 #include "define.h"
 #include <iostream>
 #include <string.h>
-#define MAX_INSCRIPCIONES
+#include "inscripcion.h"
+
+#define MAX_INSCRIPCIONES 50
+
+using namespace std;
 
 class Clase
 {
@@ -21,4 +25,4 @@ public:
     void setTurno(Turno turno);
     ~Clase();
     int cupo();
-}
+};

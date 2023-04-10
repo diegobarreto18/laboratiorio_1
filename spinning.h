@@ -3,6 +3,8 @@
 #include <string.h>
 #include "clase.h"
 
+using namespace std;
+
 class Spinning: public Clase{
     private:
         int cantBicletas;
@@ -13,5 +15,5 @@ class Spinning: public Clase{
     void setCantBicicletas(int cantBicicletas);
     ~Spinning();
     int cupo();
-}
+};
 

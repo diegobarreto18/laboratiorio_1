@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string.h>
 
+using namespace std;
 
 class DtEntrenamiento: public DtClase
 {
@@ -13,4 +14,4 @@ class DtEntrenamiento: public DtClase
         string getEnRambla();
         void setEnRambla(bool enRambla);
         ~DtEntrenamiento();
-}
+};

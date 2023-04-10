@@ -3,6 +3,8 @@
 #include <string.h>
 #include "clase.h"
 
+using namespace std;
+
 class Entrenamiento : public Clase
 {
 private:
@@ -15,4 +17,4 @@ public:
     void setEnRambla(bool enRambla);
     ~Entrenamiento();
     int cupo();
-}
+};

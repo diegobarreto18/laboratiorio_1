@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string.h>
 
+using namespace std;
+
 class DtSpinning : public DtClase
 {
 private:
@@ -13,4 +15,4 @@ public:
     int getCantBicicletas();
     void setCantBicicletas(int cantBicicletas);
     ~DtSpinning();
-}
+};

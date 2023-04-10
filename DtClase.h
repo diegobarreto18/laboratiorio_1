@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string.h>
 
+using namespace std;
+
 class DtClase
 {
 private:
@@ -20,4 +22,4 @@ public:
     void setTurno(Turno turno);
     ~DtClase();
     int cupo();
-}
+};

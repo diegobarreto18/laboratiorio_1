@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string.h>
 
+using namespace std;
+
 class Fecha
 {
 private:
@@ -19,4 +21,4 @@ public:
     int getAnio();
     void setAnio(int anio);
     ~Fecha();
-}
+};

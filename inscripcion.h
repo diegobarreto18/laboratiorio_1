@@ -1,7 +1,10 @@
-#include "define.h"
 #include <iostream>
-#include "inscripcion.h"
-#include <string.h>
+#include <string>
+#include "define.h"
+#include "Fecha.h"
+#include "socio.h"
+
+using namespace std;
 
 class Inscripcion
 {
@@ -23,4 +26,4 @@ public:
     Fecha getFecha();
     void setFecha(Fecha fecha);
     ~Inscripcion();
-}
+};

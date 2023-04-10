@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string.h>
 
+using namespace std;
+
 class DtSocio
 {
 private:
@@ -16,4 +18,4 @@ public:
     string getNombre();
     void setNombre(string nombre);
     ~DtSocio();
-}
+};

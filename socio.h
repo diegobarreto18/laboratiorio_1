@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string.h>
 
+using namespace std;
+
 class Socio
 {
 private:
@@ -10,10 +12,10 @@ private:
 
 public:
     Socio();
-    Socio(int ci, string nombre);
+    Socio(string ci, string nombre);
     int getCi();
     void setCi(int ci);
     string getNombre();
     void setNombre(string nombre);
     ~Socio();
-}
+};
