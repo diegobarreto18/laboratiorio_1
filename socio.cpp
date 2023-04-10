@@ -2,9 +2,11 @@
 #include <string.h>
 #include "socio.h"
 
+using namespace std;
+
 Socio::Socio() {}
 
-Socio::Socio(int ci, string nombre)
+Socio::Socio(string ci, string nombre)
 {
     this->ci = ci;
     this->nombre = nombre;

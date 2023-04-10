@@ -2,6 +2,7 @@
 #include "inscripcion.h"
 #include <string.h>
 
+
 Inscripcion::Inscripcion(){}
 
 Inscripcion::Inscripcion(Fecha fecha, Socio* socio)

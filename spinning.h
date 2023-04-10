@@ -1,13 +1,15 @@
 #include "define.h"
 #include <iostream>
 #include <string.h>
+#include "clase.h"
+
 
 using namespace std;
 
 class Spinning : public Clase
 {
 private:
-    int cantBicletas;
+    int cantBicicletas;
 
 public:
     Spinning();
