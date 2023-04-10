@@ -9,7 +9,7 @@ Inscripcion::Inscripcion(Fecha fecha, Socio* socio)
     this->fecha = fecha;
 }
 
-string Inscripcion::getFecha()
+Fecha Inscripcion::getFecha()
 {
     return this->fecha;
 }
@@ -18,9 +18,10 @@ void Inscripcion::setFecha(Fecha fecha)
     this->fecha = fecha;
 }
 
-void Inscripcion::setSocio(Socio* socio){
-    this->socio = socio;
-}
+// void Inscripcion::setSocio(Socio* socio){
+//     this->socio = socio;
+// }
+
 
 Inscripcion::~Inscripcion() {}
 

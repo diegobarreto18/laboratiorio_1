@@ -5,6 +5,8 @@
 #include "DtEntrenamiento.h"
 #include "DtSocio.h"
 #include "DtSpinning.h"
+#include "spinning.h"
+
 #define MAX_SOCIOS 100
 #define MAX_CLASES 100
 
@@ -46,11 +48,12 @@ void agregarClase(DtClase &clase)
     // Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción std::invalid:argument
     // EJEMPLO TOMADO DE LOS VENGADORES
     int i = 0;
+    int x = 10;
     while (i < colClases.tope && colClases.c[i]->getNombre() != clase.getNombre())
         i++;
     if (i == colClases.tope)
     {
-        Clase *Clase = new Clase(clase.id, clase.nombre, clase.turno);
+        Clase *Clase = new Spinning (clase.getId(), clase.getNombre(), clase.getTurno(), x);
         colClases.c[colClases.tope] = Clase;
         colClases.tope++;
     }

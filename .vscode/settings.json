@@ -3,6 +3,7 @@
     "files.associations": {
         "string": "cpp",
         "unistd.h": "c",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "stdexcept": "cpp"
     }
 }
