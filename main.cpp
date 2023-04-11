@@ -78,53 +78,63 @@ void menuAgregarClase()
     system("clear");
     cout << "___________________________" << endl;
     cout << "_______Agregar Clase________" << endl;
-    
+
     string nombre;
-    int turno, tipo,cantBici,rambla;
+    int turno, tipo, cantBici, rambla;
     bool enRambla;
     Turno turno_asign;
 
     cout << "Nombre de clase: ";
     cin >> nombre;
-    
+
+    //AGREGAR IF DE CONTROL DE NOMBRE EN LA COLECCION DE CLASES
+
     cout << "\nSeleccione turno de la clase";
-    cout << "\n1)Mañana";
-    cout << "\n2)Tarde";
-    cout << "\n3)Noche";
+    cout << "\n1)Mañana" << "\n2)Tarde" << "\n3)Noche" << endl;
     cin >> turno;
 
-    switch(turno){
-        case 1: turno_asign = (Turno).0;
-                break;
-        case 2:  turno_asign = (Turno).1;
-                break;
-        case 3:  turno_asign = (Turno).2;
-                break;
+    switch (turno)
+    {
+    case 1:
+        turno_asign = Turno(0);
+        break;
+    case 2:
+        turno_asign = Turno(1);
+        break;
+    case 3:
+        turno_asign = Turno(2);
+        break;
     }
 
     cout << "\nSeleccione tipo de clase";
-    cout << "\n1)Spinning";
-    cout << "\n2)Entrenamiento";
+    cout << "\n1)Spinning" << "\n2)Entrenamiento" << endl;
     cin >> tipo;
-    
+
     DtSpinning spinning;
     DtEntrenamiento entrenamiento;
-    switch(tipo){
-        case 1: cout << "--- CANTIDAD BICICLETAS: ---" << endl;
-                cin >> cantBici;
-                spinning = DtSpinning(obtenerId(),nombre, turno_asign, cantBici);
-                agregarClase(spinning);
-                break;
-        case 2: cout << "--- EN RAMBLA? ---" << endl;
-                cin >> rambla;
-                switch(rambla){
-                    case 1: enRambla = true;
-                            break;
-                    case 2: enRambla = false;
-                }
-                entrenamiento =  DtEntrenamiento(obtenerId(), nombre, turno_asign, enRambla);
-                agregarClase(entrenamiento);
-                break;
+    switch (tipo)
+    {
+    case 1:
+        cout << "--- CANTIDAD BICICLETAS: ---" << endl;
+        cin >> cantBici;
+        spinning = DtSpinning(obtenerId(), nombre, turno_asign, cantBici);
+        agregarClase(spinning);
+        break;
+    case 2:
+        cout << "--- EN RAMBLA? ---" << endl;
+        cout << "\n1)Si" << "\n2)No" << endl;
+        cin >> rambla;
+        switch(rambla){
+        case 1:
+            enRambla = true;
+            break;
+        case 2:
+            enRambla = false;
+            break;
+        }
+        entrenamiento = DtEntrenamiento(obtenerId(), nombre, turno_asign, enRambla);
+        agregarClase(entrenamiento);
+        break;
     }
 }
 
@@ -132,6 +142,10 @@ void agregarClase(DtClase &clase)
 /*Tipo es un dato dado por el usuario que especifica que
 clase agraga si Spinning o Entrenmiento*/
 {
+
+
+
+
 }
 
 void agregarInscripcion(string ciSocio, int idClase, Fecha fecha)
@@ -147,26 +161,11 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha)
 
 void borrarInscripcion(string ciSocio, int idClase)
 {
-
     /*
         Borra la inscripción de un socio a una clase. Si no existe una inscripción de ese usuario para esa
         clase, se levanta una excepción std::invalid_argument.
     */
 }
-/*
-
-ESTO SERÍA LO QUE DEBERIAMOS HACER COMO CLASE MAIN ... creo
-
-TipoRet createTable (bd & bd, char *nombreTabla){
-    //cout << " - createTable " << nombreTabla << endl
-    return crearTabla_Tablas(bd->ts, nombreTabla);
-}
-
-TipoRet dropTable (bd & bd, char *nombreTabla){
-    //cout << " - dropTable " << nombreTabla << endl;;
-    return NO_IMPLEMENTADA;
-}
-*/
 
 void menu()
 {
@@ -192,10 +191,10 @@ int main()
         switch (opcion)
         {
         case 1:
-            // menuagregarSocio();
+            menuAgregarSocio();
             break;
         case 2:
-            // menuagreagarClase();
+            menuAgregarClase();
             break;
         case 3:
             // menuAsignarMisionAVengador();
