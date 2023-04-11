@@ -25,9 +25,31 @@ struct Socios
 
 } colSocios;
 
-int obtenerID()
+int obtenerId();
+
+int obtenerId()
 {
     return colClases.tope + 1;
+}
+
+void agregarSocio(string ci, string nombre);
+
+void menuAgregarSocio()
+{
+    system("clear");
+    cout << "___________________________" << endl;
+    cout << "_______AGREGAR SOCIO________" << endl;
+
+    int ci;
+    string nombre;
+
+    cout << "CI: ";
+    cin >> ci;
+
+    cout << "\nNOMBRE: ";
+    cin >> nombre;
+
+    agregarSocio(ci, nombre);
 }
 
 void agregarSocio(string ci, string nombre)
@@ -41,6 +63,7 @@ void agregarSocio(string ci, string nombre)
         Socio *socio = new Socio(ci, nombre);
         colSocios.s[colSocios.tope] = socio;
         colSocios.tope++;
+        cout << "Socio agregado con éxito" << endl;
     }
     else
     {
@@ -48,43 +71,70 @@ void agregarSocio(string ci, string nombre)
     }
 }
 
-void agregarClase(DtClase &clase, int tipo)
+void agregarClase(DtClase &clase);
+
+void menuAgregarClase()
+{
+    system("clear");
+    cout << "___________________________" << endl;
+    cout << "_______Agregar Clase________" << endl;
+    
+    string nombre;
+    int turno, tipo,cantBici,rambla;
+    bool enRambla;
+    Turno turno_asign;
+
+    cout << "Nombre de clase: ";
+    cin >> nombre;
+    
+    cout << "\nSeleccione turno de la clase";
+    cout << "\n1)Mañana";
+    cout << "\n2)Tarde";
+    cout << "\n3)Noche";
+    cin turno;
+
+    switch(turno){
+        case 1: turno_asign = _turno.0;
+                break;
+        case 2:  turno_asign = _turno.1;
+                break;
+        case 3:  turno_asign = _turno.2;
+                break;
+    }
+
+    cout << "\nSeleccione tipo de clase";
+    cout << "\n1)Spinning";
+    cout << "\n2)Entrenamiento";
+    cin tipo;
+    
+    DtSpinning spinning;
+    DtEntrenamiento entrenamiento;
+    switch(tipo){
+        case 1: cout << "--- CANTIDAD BICICLETAS: ---" << endl;
+                cin << cantBici;
+                spinning = DtSpinning(obtenerId(),nombre, turno_asign, cantBici);
+                agregarClase(spinning);
+                break;
+        case 2: cout << "--- EN RAMBLA? ---" << endl;
+                switch(rambla){
+                    case 1: enRambla = true;
+                            break;
+                    case 2: enRambla = false;
+                }
+                entrenamiento =  DtEntrenamiento(id, nombre, turno_asign, enRambla);
+                agregarClase(entrenamiento);
+                break;
+    }
+    agregarClase();
+}
+
+void agregarClase(DtClase &clase)
 /*Tipo es un dato dado por el usuario que especifica que
 clase agraga si Spinning o Entrenmiento*/
 {
-    // Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción std::invalid:argument
-    // EJEMPLO TOMADO DE LOS VENGADORES
-    int i = 0;
-    int x = 10;
-    while (i < colClases.tope && colClases.c[i]->getNombre() != clase.getNombre())
-        i++;
-    if (i == colClases.tope)
-    {
-        if ((strcmp(tipo, "Spinning") == 0) || (strcmp(tipo, "spinning") == 0))
-        {
-            Clase *Clase = new Spinning(clase.getId(), clase.getNombre(), clase.getTurno(), x);
-            colClases.c[colClases.tope] = Clase;
-            colClases.tope++;
-        }
-        else if ((strcmp(tipo, "Entrenamiento") == 0) || (strcmp(tipo, "entrenamiento") == 0))
-        {
-
-            Clase *Clase = new Entrenamiento(clase.getId(), clase.getNombre(), clase.getTurno(), x);
-            colClases.c[colClases.tope] = Clase;
-            colClases.tope++;
-        }
-        else
-        {
-            throw invalid_argument("Esa clase no existe: Solo Spinning o Entrenamiento.");
-        }
-    }
-    else
-    {
-        throw invalid_argument("Ya existe una Clase con ese nombre!!");
-    }
 }
 
-void agregarInscripcion(string ciSocio, int idCalse, Fecha fecha)
+void agregarInscripcion(string ciSocio, int idClase, Fecha fecha)
 {
 
     /*
@@ -131,59 +181,6 @@ void menu()
     cout << "OPCION: ";
 }
 
-void menuAgregarSocio()
-{
-    system("clear");
-    cout << "___________________________" << endl;
-    cout << "_______CREAR MISION________" << endl;
-    string nombre;
-    int dia, mes, anio;
-    cout << "NOMBRE: ";
-    cin >> nombre;
-    cout << "\nFECHA DE INICIO";
-    cout << "\nDIA: ";
-    cin >> dia;
-    cout << "\nMES: ";
-    cin >> mes;
-    cout << "\nANIO: ";
-    cin >> anio;
-    Fecha inicio, fin;
-    inicio.dia = dia;
-    inicio.mes = mes;
-    inicio.anio = anio;
-    cout << "\nFECHA DE FIN";
-    cout << "\nDIA: ";
-    cin >> dia;
-    cout << "\nMES: ";
-    cin >> mes;
-    cout << "\nANIO: ";
-    cin >> anio;
-    fin.dia = dia;
-    fin.mes = mes;
-    fin.anio = anio;
-    altaMision(nombre, inicio, fin);
-}
-
-void menuAgregarClase()
-{
-    system("clear");
-    cout << "___________________________" << endl;
-    cout << "_______Agregar Clase________" << endl;
-    string nombre;
-    int turno, tipo;
-    cout << "Nombre de clase: ";
-    cin >> nombre;
-    cout << "\nSeleccione turno de la clase";
-    cout << "\n1)Mañana";
-    cout << "\n2)Tarde";
-    cout << "\n3)Noche";
-    cin turno;
-    cout << "\nSeleccione tipo de clase";
-    cout << "\n1)Spinnig";
-    cout << "\n2)Entrenamiento";
-    cin tipo;
-    agregarClase();
-}
 int main()
 {
 
