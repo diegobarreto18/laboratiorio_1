@@ -7,6 +7,7 @@
 #include "DtSpinning.h"
 #include "clase.h"
 
+
 using namespace std;
 
 class Spinning : public Clase

@@ -2,6 +2,8 @@
 #include <string.h>
 #include "socio.h"
 
+using namespace std;
+
 Socio::Socio() {}
 
 Socio::Socio(string ci, string nombre)

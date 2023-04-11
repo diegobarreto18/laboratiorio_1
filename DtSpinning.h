@@ -6,7 +6,6 @@
 #include <string.h>
 #include "DtClase.h"
 
-
 using namespace std;
 
 class DtSpinning : public DtClase
