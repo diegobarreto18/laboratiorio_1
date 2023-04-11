@@ -1,16 +1,7 @@
-#ifndef DEFINE_H
-#define DEFINE_H
-
-
-// define.h
-// Modulo de Definiciones Generales.
-
-#define MAX_COMANDO 128
-#define MAX_NOMBRE 20
-
+#ifndef TURNO
+#define TURNO
 
 enum _turno{Manana, Tarde, Noche};
 typedef enum _turno Turno;
-
 
 #endif
