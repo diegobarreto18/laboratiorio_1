@@ -25,9 +25,14 @@ struct Socios
 
 } colSocios;
 
+int obtenerID()
+{
+    return colClases.tope + 1;
+}
+
 void agregarSocio(string ci, string nombre)
 {
- // Crea un nuevo socio en el sistema. En caso de ya existir, levanta excepción std::invalid_argument
+    // Crea un nuevo socio en el sistema. En caso de ya existir, levanta excepción std::invalid_argument
     int i = 0;
     while (i < colSocios.tope && colSocios.s[i]->getNombre() != nombre)
         i++;
@@ -41,10 +46,11 @@ void agregarSocio(string ci, string nombre)
     {
         throw invalid_argument("Ya existe un Socio con ese nombre!!");
     }
-
 }
 
-void agregarClase(DtClase &clase)
+void agregarClase(DtClase &clase, int tipo)
+/*Tipo es un dato dado por el usuario que especifica que
+clase agraga si Spinning o Entrenmiento*/
 {
     // Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción std::invalid:argument
     // EJEMPLO TOMADO DE LOS VENGADORES
@@ -54,19 +60,29 @@ void agregarClase(DtClase &clase)
         i++;
     if (i == colClases.tope)
     {
-        Clase *Clase = new Spinning (clase.getId(), clase.getNombre(), clase.getTurno(), x);
-        colClases.c[colClases.tope] = Clase;
-        colClases.tope++;
+        if ((strcmp(tipo, "Spinning") == 0) || (strcmp(tipo, "spinning") == 0))
+        {
+            Clase *Clase = new Spinning(clase.getId(), clase.getNombre(), clase.getTurno(), x);
+            colClases.c[colClases.tope] = Clase;
+            colClases.tope++;
+        }
+        else if ((strcmp(tipo, "Entrenamiento") == 0) || (strcmp(tipo, "entrenamiento") == 0))
+        {
+
+            Clase *Clase = new Entrenamiento(clase.getId(), clase.getNombre(), clase.getTurno(), x);
+            colClases.c[colClases.tope] = Clase;
+            colClases.tope++;
+        }
+        else
+        {
+            throw invalid_argument("Esa clase no existe: Solo Spinning o Entrenamiento.");
+        }
     }
     else
     {
         throw invalid_argument("Ya existe una Clase con ese nombre!!");
     }
 }
-
-
-
-
 
 void agregarInscripcion(string ciSocio, int idCalse, Fecha fecha)
 {
@@ -115,6 +131,59 @@ void menu()
     cout << "OPCION: ";
 }
 
+void menuAgregarSocio()
+{
+    system("clear");
+    cout << "___________________________" << endl;
+    cout << "_______CREAR MISION________" << endl;
+    string nombre;
+    int dia, mes, anio;
+    cout << "NOMBRE: ";
+    cin >> nombre;
+    cout << "\nFECHA DE INICIO";
+    cout << "\nDIA: ";
+    cin >> dia;
+    cout << "\nMES: ";
+    cin >> mes;
+    cout << "\nANIO: ";
+    cin >> anio;
+    Fecha inicio, fin;
+    inicio.dia = dia;
+    inicio.mes = mes;
+    inicio.anio = anio;
+    cout << "\nFECHA DE FIN";
+    cout << "\nDIA: ";
+    cin >> dia;
+    cout << "\nMES: ";
+    cin >> mes;
+    cout << "\nANIO: ";
+    cin >> anio;
+    fin.dia = dia;
+    fin.mes = mes;
+    fin.anio = anio;
+    altaMision(nombre, inicio, fin);
+}
+
+void menuAgregarClase()
+{
+    system("clear");
+    cout << "___________________________" << endl;
+    cout << "_______Agregar Clase________" << endl;
+    string nombre;
+    int turno, tipo;
+    cout << "Nombre de clase: ";
+    cin >> nombre;
+    cout << "\nSeleccione turno de la clase";
+    cout << "\n1)Mañana";
+    cout << "\n2)Tarde";
+    cout << "\n3)Noche";
+    cin turno;
+    cout << "\nSeleccione tipo de clase";
+    cout << "\n1)Spinnig";
+    cout << "\n2)Entrenamiento";
+    cin tipo;
+    agregarClase();
+}
 int main()
 {
 
@@ -126,22 +195,22 @@ int main()
         switch (opcion)
         {
         case 1:
-            //menuRegistrarVengador();
+            // menuagregarSocio();
             break;
         case 2:
-            //menuCrearMision();
+            // menuagreagarClase();
             break;
         case 3:
-            //menuAsignarMisionAVengador();
+            // menuAsignarMisionAVengador();
             break;
         case 4:
-            //listarVengadores();
+            // listarVengadores();
             break;
         case 5:
-            //listarMisiones();
+            // listarMisiones();
             break;
         case 6:
-            //menuListarMisionesDeVengador();
+            // menuListarMisionesDeVengador();
             break;
         }
     }
