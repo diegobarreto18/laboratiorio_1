@@ -40,7 +40,7 @@ void menuAgregarSocio()
     cout << "___________________________" << endl;
     cout << "_______AGREGAR SOCIO________" << endl;
 
-    int ci;
+    string ci;
     string nombre;
 
     cout << "CI: ";
@@ -91,7 +91,7 @@ void menuAgregarClase()
     cout << "\n1)Mañana";
     cout << "\n2)Tarde";
     cout << "\n3)Noche";
-    cin turno;
+    cin >> turno;
 
     switch(turno){
         case 1: turno_asign = _turno.0;
@@ -105,23 +105,24 @@ void menuAgregarClase()
     cout << "\nSeleccione tipo de clase";
     cout << "\n1)Spinning";
     cout << "\n2)Entrenamiento";
-    cin tipo;
+    cin >> tipo;
     
     DtSpinning spinning;
     DtEntrenamiento entrenamiento;
     switch(tipo){
         case 1: cout << "--- CANTIDAD BICICLETAS: ---" << endl;
-                cin << cantBici;
+                cin >> cantBici;
                 spinning = DtSpinning(obtenerId(),nombre, turno_asign, cantBici);
                 agregarClase(spinning);
                 break;
         case 2: cout << "--- EN RAMBLA? ---" << endl;
+                cin >> rambla;
                 switch(rambla){
                     case 1: enRambla = true;
                             break;
                     case 2: enRambla = false;
                 }
-                entrenamiento =  DtEntrenamiento(id, nombre, turno_asign, enRambla);
+                entrenamiento =  DtEntrenamiento(obtenerId(), nombre, turno_asign, enRambla);
                 agregarClase(entrenamiento);
                 break;
     }
