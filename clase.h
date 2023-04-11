@@ -1,3 +1,6 @@
+#ifndef CLASE
+#define CLASE
+
 #include "define.h"
 #include <iostream>
 #include <string.h>
@@ -26,3 +29,5 @@ public:
     ~Clase();
     virtual int cupo();
 };
+
+#endif

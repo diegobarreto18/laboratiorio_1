@@ -1,12 +1,11 @@
+#ifndef ENTRENAMIENTO
+#define ENTRENAMIENTO
+
 #include "define.h"
 #include <iostream>
 #include <string.h>
+#include "DtEntrenamiento.h"
 #include "clase.h"
-#include <typeinfo>
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-
 
 using namespace std;
 
@@ -23,3 +22,5 @@ public:
     ~Entrenamiento();
     int cupo();
 };
+
+#endif

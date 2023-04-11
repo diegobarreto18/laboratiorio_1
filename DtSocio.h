@@ -1,3 +1,6 @@
+#ifndef DTSOCIO
+#define DTSOCIO
+
 #include "define.h"
 #include <iostream>
 #include <string.h>
@@ -19,3 +22,5 @@ public:
     void setNombre(string nombre);
     ~DtSocio();
 };
+
+#endif

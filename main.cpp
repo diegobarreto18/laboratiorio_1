@@ -6,6 +6,7 @@
 #include "DtSocio.h"
 #include "DtSpinning.h"
 #include "spinning.h"
+#include "entrenamiento.h"
 
 #define MAX_SOCIOS 100
 #define MAX_CLASES 100

@@ -1,6 +1,10 @@
+#ifndef SPINNING
+#define SPINNING
+
 #include "define.h"
 #include <iostream>
 #include <string.h>
+#include "DtSpinning.h"
 #include "clase.h"
 
 
@@ -19,3 +23,5 @@ public:
     ~Spinning();
     int cupo();
 };
+
+#endif

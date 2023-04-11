@@ -1,3 +1,6 @@
+#ifndef DTENTRENAMIENTO
+#define DTENTRENAMIENTO
+
 #include "define.h"
 #include <iostream>
 #include <string.h>
@@ -16,3 +19,5 @@ class DtEntrenamiento: public DtClase
         void setEnRambla(bool enRambla);
         ~DtEntrenamiento();
 };
+
+#endif

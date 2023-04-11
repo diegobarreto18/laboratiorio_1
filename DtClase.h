@@ -1,3 +1,6 @@
+#ifndef DTCLASE
+#define DTCLASE
+
 #include "define.h"
 #include <iostream>
 #include <string.h>
@@ -10,7 +13,6 @@ private:
     int id;
     string nombre;
     Turno turno;
-
 public:
     DtClase();
     DtClase(int id, string nombre, Turno turno);
@@ -23,3 +25,5 @@ public:
     ~DtClase();
     int cupo();
 };
+
+#endif

@@ -1,12 +1,12 @@
-#include <iostream>
-#include "spinning.h"
 #include <string.h>
+#include "spinning.h"
 
 using namespace std;
 
 Spinning::Spinning() {}
 
-Spinning::Spinning(int id, string nombre, Turno turno, int cantBicicletas):Clase(id, nombre, turno)
+Spinning::Spinning(int id, string nombre, Turno turno,int cantBicicletas):Clase(id, nombre, turno)
+
 {
   this->cantBicicletas = cantBicicletas;
 }

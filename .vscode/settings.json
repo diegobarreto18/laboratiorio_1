@@ -4,6 +4,7 @@
         "string": "cpp",
         "unistd.h": "c",
         "ostream": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "makefile": "cpp"
     }
 }

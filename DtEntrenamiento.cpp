@@ -15,7 +15,7 @@ bool DtEntrenamiento::getEnRambla()
 }
 void DtEntrenamiento::setEnRambla(bool enRambla)
 {
-  this->enRambla =enRambla;
+  this->enRambla = enRambla;
 }
 
 DtEntrenamiento::~DtEntrenamiento() {}

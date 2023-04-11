@@ -1,3 +1,6 @@
+#ifndef INSCRIPCION
+#define INSCRIPCION
+
 #include <iostream>
 #include <string>
 #include "define.h"
@@ -5,17 +8,21 @@
 #include "Fecha.h"
 
 
+
 using namespace std;
 
 class Inscripcion
 {
 private:
-    Fecha fecha;
-    Socio* socio;
+    //Fecha fecha;
+    //Socio* socio;
+
 public:
     Inscripcion();
-    Inscripcion(Fecha fecha, Socio* socio);
+    //Inscripcion(Fecha fecha, Socio* socio);
     Fecha getFecha();
-    void setFecha(Fecha fecha);
+    void setFecha(int dia,int mes,int anio, Fecha & fecha);
     ~Inscripcion();
 };
+
+#endif

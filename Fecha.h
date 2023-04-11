@@ -1,3 +1,6 @@
+#ifndef FECHA
+#define FECHA
+
 #include "define.h"
 #include <iostream>
 #include <string.h>
@@ -22,3 +25,4 @@ public:
     void setAnio(int anio);
     ~Fecha();
 };
+#endif
