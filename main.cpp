@@ -94,11 +94,11 @@ void menuAgregarClase()
     cin >> turno;
 
     switch(turno){
-        case 1: turno_asign = _turno.0;
+        case 1: turno_asign = (Turno).0;
                 break;
-        case 2:  turno_asign = _turno.1;
+        case 2:  turno_asign = (Turno).1;
                 break;
-        case 3:  turno_asign = _turno.2;
+        case 3:  turno_asign = (Turno).2;
                 break;
     }
 
@@ -126,7 +126,6 @@ void menuAgregarClase()
                 agregarClase(entrenamiento);
                 break;
     }
-    agregarClase();
 }
 
 void agregarClase(DtClase &clase)
