@@ -1,21 +1,21 @@
 #include <iostream>
-#include "inscripcion.h"
 #include <string.h>
+#include "inscripcion.h"
 
 Inscripcion::Inscripcion(){}
 
-Inscripcion::Inscripcion(Fecha fecha, Socio* socio)
-{
-    this->fecha = fecha;
-}
+// Inscripcion::Inscripcion(Fecha fecha, Socio* socio)
+// {
+//     this->fecha = fecha;
+// }
 
 Fecha Inscripcion::getFecha()
 {
-    return this->fecha;
+    //return this->fecha;
 }
-void Inscripcion::setFecha(Fecha fecha)
+void Inscripcion::setFecha(int dia, int mes, int anio, Fecha& fecha)
 {
-    this->fecha = fecha;
+    //fecha = Fecha(dia, mes, anio);
 }
 
 // void Inscripcion::setSocio(Socio* socio){

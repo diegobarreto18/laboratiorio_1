@@ -1,6 +1,10 @@
+#ifndef DTENTRENAMIENTO
+#define DTENTRENAMIENTO
+
 #include "define.h"
 #include <iostream>
 #include <string.h>
+#include "DtClase.h"
 
 using namespace std;
 
@@ -11,7 +15,9 @@ class DtEntrenamiento: public DtClase
     public:
         DtEntrenamiento();
         DtEntrenamiento(int id, string nombre, Turno turno,bool enRambla);
-        string getEnRambla();
+        bool getEnRambla();
         void setEnRambla(bool enRambla);
         ~DtEntrenamiento();
 };
+
+#endif

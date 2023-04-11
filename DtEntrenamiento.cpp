@@ -4,18 +4,18 @@
 
 DtEntrenamiento::DtEntrenamiento() {}
 
-DtEntrenamiento::DtEntrenamiento(bool enRambla):Clase(id, nombre, turno)
+DtEntrenamiento::DtEntrenamiento(int id, string nombre, Turno turno,bool enRambla):DtClase(id, nombre, turno)
 {
   this->enRambla = enRambla;
 }
 
-string DtEntrenamiento::getEnRambla()
+bool DtEntrenamiento::getEnRambla()
 {
   return this->enRambla;
 }
-void DtEntrenamiento::setEnRambla(string enRambla)
+void DtEntrenamiento::setEnRambla(bool enRambla)
 {
-  this->enRambla =enRambla;
+  this->enRambla = enRambla;
 }
 
 DtEntrenamiento::~DtEntrenamiento() {}

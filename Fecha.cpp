@@ -14,33 +14,33 @@ Fecha::Fecha(int dia, int mes, int anio)
     }
 }
 
-int DtFecha::getDia()
+int Fecha::getDia()
 {
     return this->dia;
 }
-void DtFecha::setDia(int dia)
+void Fecha::setDia(int dia)
 {
     if (dia < 1 || dia > 31)
         throw invalid_argument("El dia no puede ser asi\n");
     else
         this->dia = dia;
 }
-int DtFecha::getMes()
+int Fecha::getMes()
 {
     return this->mes;
 }
-void DtFecha::setMes(int mes)
+void Fecha::setMes(int mes)
 {
     if (mes < 1 || mes > 12)
         throw invalid_argument("El mes no puede ser así\n");
     else
         this->mes = mes;
 }
-int DtFecha::getAnio()
+int Fecha::getAnio()
 {   
     return this->anio;
 }
-void DtFecha::setAnio(int anio)
+void Fecha::setAnio(int anio)
 {
     if (anio < 1900)
         throw invalid_argument("El año no puede ser menor a 1900\n");

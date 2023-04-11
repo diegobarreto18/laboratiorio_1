@@ -1,13 +1,18 @@
+#ifndef SPINNING
+#define SPINNING
+
 #include "define.h"
 #include <iostream>
 #include <string.h>
+#include "DtSpinning.h"
+#include "clase.h"
 
 using namespace std;
 
 class Spinning : public Clase
 {
 private:
-    int cantBicletas;
+    int cantBicicletas;
 
 public:
     Spinning();
@@ -17,3 +22,5 @@ public:
     ~Spinning();
     int cupo();
 };
+
+#endif

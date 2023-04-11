@@ -1,10 +1,9 @@
-#include <iostream>
 #include <string.h>
 #include "entrenamiento.h"
 
 Entrenamiento::Entrenamiento() {}
 
-Entrenamiento::Entrenamiento(bool enRambla):Clase(id, nombre, turno)
+Entrenamiento::Entrenamiento(int id, string nombre, Turno turno,bool enRambla):Clase(id, nombre, turno)
 {
     this->enRambla = enRambla;
 }
