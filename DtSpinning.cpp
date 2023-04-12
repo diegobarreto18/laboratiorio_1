@@ -20,3 +20,8 @@ void DtSpinning::setCantBicicletas(int cantBicicletas)
 }
 
 DtSpinning::~DtSpinning() {}
+
+DtClase* DtSpinning :: getDtClase(){
+  DtSpinning* dtspinning = new DtSpinning(this->getId(),this->getNombre(),this->getTurno(),this->getCantBicicletas());
+  return dtspinning;
+}

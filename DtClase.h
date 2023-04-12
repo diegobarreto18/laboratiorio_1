@@ -24,6 +24,7 @@ public:
     void setTurno(Turno turno);
     ~DtClase();
     int cupo();
+    virtual DtClase* getDtClase()=0;
 };
 
 #endif

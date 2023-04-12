@@ -18,6 +18,8 @@ class DtEntrenamiento: public DtClase
         bool getEnRambla();
         void setEnRambla(bool enRambla);
         ~DtEntrenamiento();
+        DtClase* getDtClase();
+
 };
 
 #endif

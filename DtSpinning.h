@@ -18,5 +18,6 @@ public:
     int getCantBicicletas();
     void setCantBicicletas(int cantBicicletas);
     ~DtSpinning();
+    DtClase* getDtClase();
 };
 #endif

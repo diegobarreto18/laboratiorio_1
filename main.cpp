@@ -87,65 +87,96 @@ void menuAgregarClase()
     cout << "Nombre de clase: ";
     cin >> nombre;
 
-    //AGREGAR IF DE CONTROL DE NOMBRE EN LA COLECCION DE CLASES
-
-    cout << "\nSeleccione turno de la clase";
-    cout << "\n1)Mañana" << "\n2)Tarde" << "\n3)Noche" << endl;
-    cin >> turno;
-
-    switch (turno)
+    int i = 0;
+    while (i < colClases.tope && colClases.c[i]->getNombre() != nombre)
+        i++;
+    if (i == colClases.tope)
     {
-    case 1:
-        turno_asign = Turno(0);
-        break;
-    case 2:
-        turno_asign = Turno(1);
-        break;
-    case 3:
-        turno_asign = Turno(2);
-        break;
-    }
 
-    cout << "\nSeleccione tipo de clase";
-    cout << "\n1)Spinning" << "\n2)Entrenamiento" << endl;
-    cin >> tipo;
+        cout << "\nSeleccione turno de la clase";
+        cout << "\n1)Mañana"
+             << "\n2)Tarde"
+             << "\n3)Noche" << endl;
+        cin >> turno;
 
-    DtSpinning spinning;
-    DtEntrenamiento entrenamiento;
-    switch (tipo)
-    {
-    case 1:
-        cout << "--- CANTIDAD BICICLETAS: ---" << endl;
-        cin >> cantBici;
-        spinning = DtSpinning(obtenerId(), nombre, turno_asign, cantBici);
-        agregarClase(spinning);
-        break;
-    case 2:
-        cout << "--- EN RAMBLA? ---" << endl;
-        cout << "\n1)Si" << "\n2)No" << endl;
-        cin >> rambla;
-        switch(rambla){
+        switch (turno)
+        {
         case 1:
-            enRambla = true;
+            turno_asign = Turno(0);
             break;
         case 2:
-            enRambla = false;
+            turno_asign = Turno(1);
+            break;
+        case 3:
+            turno_asign = Turno(2);
             break;
         }
-        entrenamiento = DtEntrenamiento(obtenerId(), nombre, turno_asign, enRambla);
-        agregarClase(entrenamiento);
-        break;
+
+        cout << "\nSeleccione tipo de clase";
+        cout << "\n1)Spinning"
+             << "\n2)Entrenamiento" << endl;
+        cin >> tipo;
+
+        DtSpinning spinning;
+        DtEntrenamiento entrenamiento;
+        switch (tipo)
+        {
+        case 1:
+            cout << "--- CANTIDAD BICICLETAS: ---" << endl;
+            cin >> cantBici;
+            spinning = DtSpinning(obtenerId(), nombre, turno_asign, cantBici);
+            agregarClase(spinning);
+            break;
+        case 2:
+            cout << "--- EN RAMBLA? ---" << endl;
+            cout << "\n1)Si"
+                 << "\n2)No" << endl;
+            cin >> rambla;
+            switch (rambla)
+            {
+            case 1:
+                enRambla = true;
+                break;
+            case 2:
+                enRambla = false;
+                break;
+            }
+            entrenamiento = DtEntrenamiento(obtenerId(), nombre, turno_asign, enRambla);
+            agregarClase(entrenamiento);
+            break;
+        }
+    }
+    else
+    {
+        throw invalid_argument("Ya existe un Socio con ese nombre!!");
     }
 }
 
 void agregarClase(DtClase &clase)
-/*Tipo es un dato dado por el usuario que especifica que
-clase agraga si Spinning o Entrenmiento*/
 {
-
-
-
-
+    try
+    {
+        DtSpinning &dts = dynamic_cast<DtSpinning &>(clase);
+        Spinning *spinning = new Spinning(dts.getId(),
+                                          dts.getNombre(),
+                                          dts.getTurno(),
+                                          dts.getCantBicicletas());
+        colClases.c[colClases.tope] = spinning;
+        colClases.tope++;
+    }
+    catch (bad_cast)
+    {
+        try
+        {
+            DtEntrenamiento &dte = dynamic_cast<DtEntrenamiento &>(clase);
+            Entrenamiento *entrenamiento = new Entrenamiento(dte.getId(), dte.getNombre(), dte.getTurno(), dte.getEnRambla());
+            colClases.c[colClases.tope] = entrenamiento;
+            colClases.tope++;
+        }
+        catch (bad_cast)
+        {
+        }
+    }
 }
 
 void agregarInscripcion(string ciSocio, int idClase, Fecha fecha)

@@ -19,3 +19,8 @@ void DtEntrenamiento::setEnRambla(bool enRambla)
 }
 
 DtEntrenamiento::~DtEntrenamiento() {}
+
+DtClase* DtEntrenamiento :: getDtClase(){
+  DtEntrenamiento* dtentrenamiento = new DtEntrenamiento(this->getId(),this->getNombre(),this->getTurno(),this->getEnRambla());
+  return dtentrenamiento;
+}
