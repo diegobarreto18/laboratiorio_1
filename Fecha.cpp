@@ -2,6 +2,8 @@
 #include "string.h"
 #include "Fecha.h"
 
+Fecha::Fecha() {}
+
 Fecha::Fecha(int dia, int mes, int anio)
 {
     if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || anio < 1900)
@@ -37,7 +39,7 @@ void Fecha::setMes(int mes)
         this->mes = mes;
 }
 int Fecha::getAnio()
-{   
+{
     return this->anio;
 }
 void Fecha::setAnio(int anio)
@@ -47,3 +49,5 @@ void Fecha::setAnio(int anio)
     else
         this->anio = anio;
 }
+
+Fecha::~Fecha() {}

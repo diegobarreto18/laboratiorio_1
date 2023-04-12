@@ -2,29 +2,37 @@
 #include <string.h>
 #include "inscripcion.h"
 
+Inscripcion::Inscripcion() {}
 
-Inscripcion::Inscripcion(){}
-
-// Inscripcion::Inscripcion(Fecha fecha, Socio* socio)
-// {
-//     this->fecha = fecha;
-// }
+Inscripcion::Inscripcion(Fecha fecha, Socio *socio)
+{
+    this->fecha = fecha;
+    this->socio = socio;
+}
 
 Fecha Inscripcion::getFecha()
 {
-    //return this->fecha;
+    return this->fecha;
 }
-void Inscripcion::setFecha(int dia, int mes, int anio, Fecha& fecha)
+void Inscripcion::setFecha(int dia, int mes, int anio, Fecha &fecha)
 {
-    //fecha = Fecha(dia, mes, anio);
+    fecha = Fecha(dia, mes, anio);
 }
 
-// void Inscripcion::setSocio(Socio* socio){
-//     this->socio = socio;
-// }
+Socio* Inscripcion::getSocio()
+{
+    return this->socio;
+}
 
+void Inscripcion::setSocio(Socio *socio)
+{
+    this->socio = socio;
+}
 
 Inscripcion::~Inscripcion() {}
+
+
+
 
 /*
     De cada inscripción se conoce el socio.

@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string.h>
 #include "inscripcion.h"
+#include "DtClase.h"
 
 #define MAX_INSCRIPCIONES 50
 

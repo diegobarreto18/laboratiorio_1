@@ -20,7 +20,9 @@ public:
     void setCi(int ci);
     string getNombre();
     void setNombre(string nombre);
-    ~DtSocio();
+    virtual ~DtSocio();
+
+    friend ostream& operator << (ostream&, const DtSocio&);
 };
 
 #endif

@@ -4,6 +4,7 @@
 #include "define.h"
 #include <iostream>
 #include <string.h>
+#include "DtSocio.h"
 
 using namespace std;
 
@@ -20,5 +21,7 @@ public:
     string getNombre();
     void setNombre(string nombre);
     ~Socio();
+
+
 };
 #endif

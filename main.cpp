@@ -7,6 +7,7 @@
 #include "DtSpinning.h"
 #include "spinning.h"
 #include "entrenamiento.h"
+#include "inscripcion.h"
 
 #define MAX_SOCIOS 100
 #define MAX_CLASES 100
@@ -209,31 +210,10 @@ void agregarClase(DtClase &clase)
 
 void agregarInscripcion(string ciSocio, int idClase, Fecha fecha);
 
-void menuAgregarInscipcion(){
-  system("clear");
-  cout << "__________________________" << endl;
-  cout << "_____AGREGAR INSCIRPCION_____" << endl;
-  string nombre;
-  int poder,dia,mes,anio;
-  cout << "NOMBRE: ";
-  cin >> nombre;
-  cout << "PODER: ";
-  cin >> poder;
-  cout << "FECHA NACIMIENTO";
-  cout << "\nDIA: ";
-  cin >> dia;
-  cout << "MES: ";
-  cin >> mes;
-  cout << "ANIO: ";
-  cin >> anio;
-  try{
-    DtFecha fecha = DtFecha(dia, mes, anio);
-    agregarVengador(nombre,poder,fecha);
-  } catch (invalid_argument& e){
-    cout << e.what() << endl;
-    system("sleep 5");
-  }
-}
+/*void menuAgregarInscipcion(){
+  
+}*/
+
 
 
 

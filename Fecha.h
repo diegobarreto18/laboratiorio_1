@@ -24,5 +24,11 @@ public:
     int getAnio();
     void setAnio(int anio);
     ~Fecha();
+
+
+
+    /*friend ostream& operator << (ostream&,Fecha&);
+    friend bool operator ==(const Fecha&, const Fecha&);
+    friend bool operator <(const Fecha&,const Fecha&);*/
 };
 #endif

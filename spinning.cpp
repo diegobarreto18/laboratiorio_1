@@ -22,6 +22,9 @@ void Spinning::setCantBicicletas(int cantBicicletas)
 
 int Spinning::cupo()
 {
+  return this->cantBicicletas + MAX_INSCRIPCIONES;
+
+
   // Operación que calcula la cantidad de cupos que tiene una clase
 
   // Esto es distinto a la operación de calculo de la de CLASE
