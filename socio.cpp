@@ -12,6 +12,16 @@ Socio::Socio(string ci, string nombre)
     this->nombre = nombre;
 }
 
+string Socio::getCi()
+{
+    return this->ci;
+}
+
+void Socio::setCi(string ci)
+{
+    this->ci = ci;
+}
+
 string Socio::getNombre()
 {
     return this->nombre;

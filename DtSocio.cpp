@@ -4,10 +4,21 @@
 
 DtSocio::DtSocio() {}
 
-DtSocio::DtSocio(int ci, string nombre)
+DtSocio::DtSocio(string ci, string nombre)
 {
   this->ci = ci;
   this->nombre = nombre;
+}
+
+
+string DtSocio::getCi()
+{
+  return this->ci;
+}
+
+void DtSocio::setCi(string ci)
+{
+  this->ci = ci;
 }
 
 string DtSocio::getNombre()

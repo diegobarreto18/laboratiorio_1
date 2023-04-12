@@ -16,8 +16,8 @@ private:
 public:
     Socio();
     Socio(string ci, string nombre);
-    int getCi();
-    void setCi(int ci);
+    string getCi();
+    void setCi(string ci);
     string getNombre();
     void setNombre(string nombre);
     ~Socio();

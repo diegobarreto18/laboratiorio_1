@@ -10,19 +10,19 @@ using namespace std;
 class DtSocio
 {
 private:
-    int ci;
+    string ci;
     string nombre;
 
 public:
     DtSocio();
-    DtSocio(int ci, string nombre);
-    int getCi();
-    void setCi(int ci);
+    DtSocio(string ci, string nombre);
+    string getCi();
+    void setCi(string ci);
     string getNombre();
     void setNombre(string nombre);
     virtual ~DtSocio();
 
-    friend ostream& operator << (ostream&, const DtSocio&);
+    //friend ostream& operator << (ostream&, const DtSocio&);
 };
 
 #endif

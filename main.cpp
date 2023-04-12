@@ -9,6 +9,7 @@
 #include "entrenamiento.h"
 #include "inscripcion.h"
 
+
 #define MAX_SOCIOS 100
 #define MAX_CLASES 100
 
@@ -72,7 +73,6 @@ void menuAgregarSocio()
         cout << e.what() << endl;
         system("sleep 5");
     }
-    
 }
 
 void agregarSocio(string ci, string nombre)
@@ -174,7 +174,6 @@ void menuAgregarClase()
     {
         throw invalid_argument("Ya existe una Clase con ese nombre!!");
     }
-    
 }
 
 void agregarClase(DtClase &clase)
@@ -210,12 +209,30 @@ void agregarClase(DtClase &clase)
 
 void agregarInscripcion(string ciSocio, int idClase, Fecha fecha);
 
-/*void menuAgregarInscipcion(){
-  
-}*/
+void menuAgregarInscipcion()
+{
 
-
-
+    system("clear");
+    cout << "___________________________" << endl;
+    cout << "____AGREGAR INSCRIPCION___" << endl;
+    string socio;
+    cout << "Socio Ci: ";
+    cin >> socio;
+    int i = 0;
+    while (i < colSocios.tope && colSocios.s[i]->getCi() != socio)
+        i++;
+    if (socio == colSocios.s[i]->getCi())
+    {
+        int clase;
+        cout << "Clase Id: ";
+        cin >> clase;
+        
+    }
+    else
+    {
+        throw invalid_argument("No existe ese Socio!!");
+    }
+}
 
 void agregarInscripcion(string ciSocio, int idClase, Fecha fecha)
 {
@@ -238,7 +255,9 @@ void borrarInscripcion(string ciSocio, int idClase)
 
 int main()
 {
-
+    colClases.tope = 0;
+    colSocios.tope = 0;
+    colInscripciones.tope = 0;
     menu();
     int opcion;
     cin >> opcion;
@@ -264,5 +283,6 @@ int main()
             break;
         }
     }
-    cout << "CHAU!!!\n" << endl;
+    cout << "CHAU!!!\n"
+         << endl;
 }

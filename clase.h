@@ -7,9 +7,17 @@
 #include "inscripcion.h"
 #include "DtClase.h"
 
-#define MAX_INSCRIPCIONES 50
+#define MAX_INSCRIPCIONES 100
 
 using namespace std;
+
+
+struct Inscripciones
+{
+    Inscripcion *inc[MAX_INSCRIPCIONES];
+    int tope;
+
+} colInscripciones;
 
 class Clase
 {
@@ -17,7 +25,7 @@ private:
     int id;
     string nombre;
     Turno turno;
-    Inscripcion* inscripciones[MAX_INSCRIPCIONES];
+
 public:
     Clase();
     Clase(int id, string nombre, Turno turno);
