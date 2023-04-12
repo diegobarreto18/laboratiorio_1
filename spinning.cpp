@@ -30,6 +30,6 @@ int Spinning::cupo()
 
 Spinning::~Spinning() {}
 /*
-    La cantidad de bicicletas de la clase de spinning debe ser >= 50
+    La cantidad de bicicletas de la clase de spinning debe ser <= 50
     EL CUPO ES IGUAL A LA CANTIDAD DE BICICLETAS
 */

@@ -27,7 +27,7 @@ public:
     Turno getTurno();
     void setTurno(Turno turno);
     ~Clase();
-    virtual int cupo();
+    virtual int cupo() = 0;
 };
 
 #endif

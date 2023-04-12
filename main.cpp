@@ -32,6 +32,19 @@ int obtenerId()
     return colClases.tope + 1;
 }
 
+void menu()
+{
+    system("clear");
+    cout << "____________________________" << endl;
+    cout << "_________MENU___________" << endl;
+    cout << "1. Agregar Socio" << endl;
+    cout << "2. Agregar Clase" << endl;
+    cout << "3. Agregar Inscripcion" << endl;
+    cout << "4. Borrar Inscripcion" << endl;
+    cout << "5. Salir" << endl;
+    cout << "OPCION: ";
+}
+
 void agregarSocio(string ci, string nombre);
 
 void menuAgregarSocio()
@@ -49,7 +62,16 @@ void menuAgregarSocio()
     cout << "\nNOMBRE: ";
     cin >> nombre;
 
-    agregarSocio(ci, nombre);
+    try
+    {
+        agregarSocio(ci, nombre);
+    }
+    catch (invalid_argument &e)
+    {
+        cout << e.what() << endl;
+        system("sleep 5");
+    }
+    
 }
 
 void agregarSocio(string ci, string nombre)
@@ -64,6 +86,7 @@ void agregarSocio(string ci, string nombre)
         colSocios.s[colSocios.tope] = socio;
         colSocios.tope++;
         cout << "Socio agregado con éxito" << endl;
+        system("sleep 1");
     }
     else
     {
@@ -148,8 +171,9 @@ void menuAgregarClase()
     }
     else
     {
-        throw invalid_argument("Ya existe un Socio con ese nombre!!");
+        throw invalid_argument("Ya existe una Clase con ese nombre!!");
     }
+    
 }
 
 void agregarClase(DtClase &clase)
@@ -163,6 +187,8 @@ void agregarClase(DtClase &clase)
                                           dts.getCantBicicletas());
         colClases.c[colClases.tope] = spinning;
         colClases.tope++;
+        cout << "Clase agregada con éxito" << endl;
+        system("sleep 1");
     }
     catch (bad_cast)
     {
@@ -172,12 +198,44 @@ void agregarClase(DtClase &clase)
             Entrenamiento *entrenamiento = new Entrenamiento(dte.getId(), dte.getNombre(), dte.getTurno(), dte.getEnRambla());
             colClases.c[colClases.tope] = entrenamiento;
             colClases.tope++;
+            cout << "Clase agregada con éxito" << endl;
+            system("sleep 1");
         }
         catch (bad_cast)
         {
         }
     }
 }
+
+void agregarInscripcion(string ciSocio, int idClase, Fecha fecha);
+
+void menuAgregarInscipcion(){
+  system("clear");
+  cout << "__________________________" << endl;
+  cout << "_____AGREGAR INSCIRPCION_____" << endl;
+  string nombre;
+  int poder,dia,mes,anio;
+  cout << "NOMBRE: ";
+  cin >> nombre;
+  cout << "PODER: ";
+  cin >> poder;
+  cout << "FECHA NACIMIENTO";
+  cout << "\nDIA: ";
+  cin >> dia;
+  cout << "MES: ";
+  cin >> mes;
+  cout << "ANIO: ";
+  cin >> anio;
+  try{
+    DtFecha fecha = DtFecha(dia, mes, anio);
+    agregarVengador(nombre,poder,fecha);
+  } catch (invalid_argument& e){
+    cout << e.what() << endl;
+    system("sleep 5");
+  }
+}
+
+
 
 void agregarInscripcion(string ciSocio, int idClase, Fecha fecha)
 {
@@ -198,34 +256,25 @@ void borrarInscripcion(string ciSocio, int idClase)
     */
 }
 
-void menu()
-{
-    system("clear");
-    cout << "____________________________" << endl;
-    cout << "_________MENU___________" << endl;
-    cout << "1. Agregar Socio" << endl;
-    cout << "2. Agregar Clase" << endl;
-    cout << "3. Agregar Inscripcion" << endl;
-    cout << "4. Borrar Inscripcion" << endl;
-    cout << "5. Salir" << endl;
-    cout << "OPCION: ";
-}
-
 int main()
 {
 
     menu();
     int opcion;
     cin >> opcion;
-    while (opcion != 7)
+    while (opcion != 5)
     {
         switch (opcion)
         {
         case 1:
             menuAgregarSocio();
+            menu();
+            cin >> opcion;
             break;
         case 2:
             menuAgregarClase();
+            menu();
+            cin >> opcion;
             break;
         case 3:
             // menuAsignarMisionAVengador();
@@ -233,12 +282,7 @@ int main()
         case 4:
             // listarVengadores();
             break;
-        case 5:
-            // listarMisiones();
-            break;
-        case 6:
-            // menuListarMisionesDeVengador();
-            break;
         }
     }
+    cout << "CHAU!!!\n" << endl;
 }
