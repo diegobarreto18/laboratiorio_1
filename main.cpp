@@ -121,7 +121,7 @@ void menuAgregarClase()
              << "\n2)Tarde"
              << "\n3)Noche" << endl;
         cin >> turno;
-
+        // agregar control de opción de turno
         switch (turno)
         {
         case 1:
@@ -139,6 +139,12 @@ void menuAgregarClase()
         cout << "\n1)Spinning"
              << "\n2)Entrenamiento" << endl;
         cin >> tipo;
+
+        while (tipo != 1 && tipo != 2)
+        {
+            cout << "Seleccione una opción válida: " << endl;
+            cin >> tipo;
+        }
 
         DtSpinning spinning;
         DtEntrenamiento entrenamiento;
@@ -163,6 +169,21 @@ void menuAgregarClase()
             case 2:
                 enRambla = false;
                 break;
+            default:
+                while (rambla != 1 && rambla != 2)
+                {
+                    cout << "Seleccione una opción válida: " << endl;
+                    cin >> rambla;
+                    switch (rambla)
+                    {
+                    case 1:
+                        enRambla = true;
+                        break;
+                    case 2:
+                        enRambla = false;
+                        break;
+                    }
+                }
             }
             entrenamiento = DtEntrenamiento(obtenerId(), nombre, turno_asign, enRambla);
             agregarClase(entrenamiento);
