@@ -9,7 +9,6 @@
 #include "entrenamiento.h"
 #include "inscripcion.h"
 
-
 #define MAX_SOCIOS 100
 #define MAX_CLASES 100
 
@@ -226,7 +225,6 @@ void menuAgregarInscipcion()
         int clase;
         cout << "Clase Id: ";
         cin >> clase;
-        
     }
     else
     {
@@ -257,7 +255,7 @@ int main()
 {
     colClases.tope = 0;
     colSocios.tope = 0;
-    colInscripciones.tope = 0;
+    // colInscripciones.tope = 0;
     menu();
     int opcion;
     cin >> opcion;

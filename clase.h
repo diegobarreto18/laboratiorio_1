@@ -7,17 +7,17 @@
 #include "inscripcion.h"
 #include "DtClase.h"
 
-#define MAX_INSCRIPCIONES 100
+//#define MAX_INSCRIPCIONES 100
 
 using namespace std;
 
 
-struct Inscripciones
+/*struct Inscripciones
 {
     Inscripcion *inc[MAX_INSCRIPCIONES];
     int tope;
 
-} colInscripciones;
+} colInscripciones;*/
 
 class Clase
 {

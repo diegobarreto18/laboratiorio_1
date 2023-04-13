@@ -22,7 +22,7 @@ void Spinning::setCantBicicletas(int cantBicicletas)
 
 int Spinning::cupo()
 {
-  return this->cantBicicletas + colInscripciones.tope;
+  //return this->cantBicicletas + colInscripciones.tope;
 
 
   // Operación que calcula la cantidad de cupos que tiene una clase
