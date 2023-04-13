@@ -4,10 +4,9 @@
 #include "define.h"
 #include <iostream>
 #include <string.h>
-#include "inscripcion.h"
 #include "DtClase.h"
 
-#define MAX_INSCRIPCIONES 100
+
 
 using namespace std;
 
@@ -29,12 +28,6 @@ public:
     void setTurno(Turno turno);
     ~Clase();
     virtual int cupo() = 0;
-    struct Inscripciones
-    {
-        Inscripcion *inc[MAX_INSCRIPCIONES];
-        int tope;
-
-    } colInscripciones;
 };
 
 #endif

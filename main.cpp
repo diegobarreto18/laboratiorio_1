@@ -11,6 +11,7 @@
 
 #define MAX_SOCIOS 100
 #define MAX_CLASES 100
+#define MAX_INSCRIPCIONES 100
 
 struct Clases
 {
@@ -25,6 +26,13 @@ struct Socios
     int tope;
 
 } colSocios;
+
+struct Inscripciones
+{
+    Inscripcion *inc[MAX_INSCRIPCIONES];
+    int tope;
+
+} colInscripciones;
 
 int obtenerId();
 
@@ -229,21 +237,6 @@ void agregarClase(DtClase &clase)
 
 void agregarInscripcion(string ciSocio, int idClase, Fecha fecha);
 
-/*string idetificadorClase(int id)
-{
-    int h;
-    while (h < colClases.tope && dynamic_cast<DtSpinning &>(colClases.c[h]->getId()) == id)
-        h++;
-    if (dynamic_cast<DtSpinning &>(colClases.c[h]->getId()) == id)
-    {
-        return "spinning";
-    }
-    else
-    {
-        return "entrenamiento";
-    }
-}*/
-
 void menuAgregarInscipcion()
 {
 
@@ -266,10 +259,34 @@ void menuAgregarInscipcion()
             h++;
         if (clase == colClases.c[h]->getId())
         {
-           /* if ()
+
+            if (colClases.c[h]->cupo() > 0)
             {
+                int dia, mes, anio;
+                cout << "Ingrese fecha \n";
+                cout << "Dia: ";
+                cin >> dia;
+                cout << "Mes: ";
+                cin >> mes;
+                cout << "Anio: ";
+                cin >> anio;
                 
-            } */
+                try
+                {
+                    Fecha fecha = Fecha(dia,mes,anio);
+                    agregarInscripcion(socio,clase,fecha);
+                }
+                catch(const std::exception& e)
+                {
+                    std::cerr << e.what() << '\n';
+                    system("sleep 5");
+                }
+                
+            }
+            else
+            {
+                throw invalid_argument("No queda cupo disponible.");
+            }
         }
         else
         {
@@ -284,6 +301,20 @@ void menuAgregarInscipcion()
 
 void agregarInscripcion(string ciSocio, int idClase, Fecha fecha)
 {
+
+    //Inscripcion * inscripcion = new Inscripcion (fecha,ciSocio,idClase);   
+
+
+
+
+
+
+
+
+
+
+
+
 
     /*
         Crea una inscripción de un socio a una clase. La inscripción tiene lugar siempre y cuando el socio y
@@ -323,7 +354,9 @@ int main()
             cin >> opcion;
             break;
         case 3:
-            // menuAsignarMisionAVengador();
+            menuAgregarInscipcion();
+            menu();
+            cin >> opcion;
             break;
         case 4:
             // listarVengadores();
