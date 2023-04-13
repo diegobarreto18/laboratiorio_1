@@ -229,6 +229,21 @@ void agregarClase(DtClase &clase)
 
 void agregarInscripcion(string ciSocio, int idClase, Fecha fecha);
 
+/*string idetificadorClase(int id)
+{
+    int h;
+    while (h < colClases.tope && dynamic_cast<DtSpinning &>(colClases.c[h]->getId()) == id)
+        h++;
+    if (dynamic_cast<DtSpinning &>(colClases.c[h]->getId()) == id)
+    {
+        return "spinning";
+    }
+    else
+    {
+        return "entrenamiento";
+    }
+}*/
+
 void menuAgregarInscipcion()
 {
 
@@ -246,6 +261,20 @@ void menuAgregarInscipcion()
         int clase;
         cout << "Clase Id: ";
         cin >> clase;
+        int h = 0;
+        while (h < colClases.tope && colClases.c[h]->getId() != clase)
+            h++;
+        if (clase == colClases.c[h]->getId())
+        {
+           /* if ()
+            {
+                
+            } */
+        }
+        else
+        {
+            throw invalid_argument("No existe esa Clase!!");
+        }
     }
     else
     {
@@ -276,7 +305,6 @@ int main()
 {
     colClases.tope = 0;
     colSocios.tope = 0;
-    // colInscripciones.tope = 0;
     menu();
     int opcion;
     cin >> opcion;
