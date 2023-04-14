@@ -6,6 +6,7 @@
 #include "define.h"
 #include "socio.h"
 #include "Fecha.h"
+#include "DtSocio.h"
 
 using namespace std;
 

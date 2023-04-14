@@ -239,54 +239,54 @@ void menuAgregarInscipcion()
     cout << "Socio Ci: ";
     cin >> socio;
     int i = 0;
-    while (i < colSocios.tope && colSocios.s[i]->getCi() != socio)
-        i++;
-    if (socio == colSocios.s[i]->getCi())
+    try
     {
-        int clase;
-        cout << "Clase Id: ";
-        cin >> clase;
-        int h = 0;
-        while (h < colClases.tope && colClases.c[h]->getId() != clase)
-            h++;
-        if (clase == colClases.c[h]->getId())
+        while (i < colSocios.tope && colSocios.s[i]->getCi() != socio)
+            i++;
+        if (socio == colSocios.s[i]->getCi())
         {
-
-            if (colClases.c[h]->cupo() > 0)
+            int clase;
+            cout << "Clase Id: ";
+            cin >> clase;
+            int h = 0;
+            while (h < colClases.tope && colClases.c[h]->getId() != clase)
+                h++;
+            if (clase == colClases.c[h]->getId())
             {
-                int dia, mes, anio;
-                cout << "Ingrese fecha \n";
-                cout << "Dia: ";
-                cin >> dia;
-                cout << "Mes: ";
-                cin >> mes;
-                cout << "Anio: ";
-                cin >> anio;
 
-                try
+                if (colClases.c[h]->cupo() > 0)
                 {
+                    int dia, mes, anio;
+                    cout << "Ingrese fecha \n";
+                    cout << "Dia: ";
+                    cin >> dia;
+                    cout << "Mes: ";
+                    cin >> mes;
+                    cout << "Anio: ";
+                    cin >> anio;
+
                     Fecha fecha = Fecha(dia, mes, anio);
                     agregarInscripcion(socio, clase, fecha);
                 }
-                catch (const std::exception &e)
+                else
                 {
-                    std::cerr << e.what() << '\n';
-                    system("sleep 5");
+                    throw invalid_argument("No queda cupo disponible.");
                 }
             }
             else
             {
-                throw invalid_argument("No queda cupo disponible.");
+                throw invalid_argument("No existe esa Clase!!");
             }
         }
         else
         {
-            throw invalid_argument("No existe esa Clase!!");
+            throw invalid_argument("No existe ese Socio!!");
         }
     }
-    else
+    catch (invalid_argument &e)
     {
-        throw invalid_argument("No existe ese Socio!!");
+        cout << e.what() << '\n';
+        system("sleep 5");
     }
 }
 
@@ -303,7 +303,6 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha)
     colClases.c[j]->agregarInscripcion(inscripcion);
     cout << "Inscripcion agregada con exito.\n";
     system("sleep 1");
-
     /*
         Crea una inscripción de un socio a una clase. La inscripción tiene lugar siempre y cuando el socio y
         la clase existan, de lo contrario se levanta una excepción std::invalid_argument. Si ya existe una
@@ -315,19 +314,35 @@ void borrarInscripcion(string ciSocio, int idClase);
 
 void menuBorrarInscripcion()
 {
-    int i;
+    system("clear");
+    int clase;
+    string socio;
     cout << "___________________________" << endl;
     cout << "_____BORRAR INSCRIPCION____" << endl;
-
-    while (i > colSocios.tope)
+    cout << "Socio ci: ";
+    cin >> socio;
+    cout << "Clase id: ";
+    cin >> clase;
+    try
     {
-        /* code */
+        borrarInscripcion(socio, clase);
+    }
+    catch (invalid_argument &e)
+    {
+        cout << e.what() << '\n';
     }
 }
 
 void borrarInscripcion(string ciSocio, int idClase)
 {
-
+    int i = 0;
+    while (colClases.c[i]->getId() != idClase)
+    {
+        i++;
+    }
+    colClases.c[i]->eliminarInscripcion(ciSocio);
+    cout << "Inscripcion agregada con exito.\n";
+    system("sleep 1");
     /*
         Borra la inscripción de un socio a una clase. Si no existe una inscripción de ese usuario para esa
         clase, se levanta una excepción std::invalid_argument.

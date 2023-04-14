@@ -33,6 +33,8 @@ public:
     virtual int cupo() = 0;
     int getTope();
     void agregarInscripcion(Inscripcion * inscripcion);
+    Inscripcion** getInscripcion();
+    void eliminarInscripcion(string ciSocio);
 
 };
 

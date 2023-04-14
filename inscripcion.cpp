@@ -31,6 +31,10 @@ void Inscripcion::setSocio(Socio *socio)
 
 Inscripcion::~Inscripcion() {}
 
+/*DtSocio* Inscripcion::getDtSocio(){
+  return this->socio->getDtSocio();
+}*/
+
 /*
     De cada inscripción se conoce el socio.
     La clase del gimnasio a la cual se inscribe y fecha de realización

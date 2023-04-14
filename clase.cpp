@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string.h>
 
-
 Clase::Clase() {}
 
 Clase::Clase(int id, string nombre, Turno turno)
@@ -40,14 +39,42 @@ void Clase::setTurno(Turno turno)
 
 Clase::~Clase() {}
 
-
-int Clase::getTope(){
+int Clase::getTope()
+{
   return this->tope;
 }
 
-void Clase::agregarInscripcion(Inscripcion* inscripcion){
+void Clase::agregarInscripcion(Inscripcion *inscripcion)
+{
   this->inscripciones[this->tope] = inscripcion;
-  this->tope ++;
+  this->tope++;
+}
+
+Inscripcion **Clase::getInscripcion()
+{
+  Inscripcion **inscripciones = new Inscripcion *[this->tope];
+  for (int i = 0; i < this->tope; i++)
+  {
+    Inscripcion *inscripcion = new Inscripcion(this->inscripciones[i]->getFecha(),
+                                               this->inscripciones[i]->getSocio());
+    inscripciones[i] = inscripcion;
+  }
+  return inscripciones;
+}
+
+void Clase::eliminarInscripcion(string ciSocio)
+{
+
+  for (int i = 0; i < this->tope; i++)
+  {
+    while (i < this->tope && this->inscripciones[i]->getSocio()->getCi() == ciSocio)
+    {
+      this->inscripciones[i] = this->inscripciones[this->tope - 1];
+      this->inscripciones[this->tope - 1] = NULL;
+      delete this->inscripciones[this->tope - 1];
+      this->tope--;
+    }
+  }
 }
 
 /*
