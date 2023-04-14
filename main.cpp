@@ -11,7 +11,6 @@
 
 #define MAX_SOCIOS 100
 #define MAX_CLASES 100
-#define MAX_INSCRIPCIONES 100
 
 struct Clases
 {
@@ -26,13 +25,6 @@ struct Socios
     int tope;
 
 } colSocios;
-
-struct Inscripciones
-{
-    Inscripcion *inc[MAX_INSCRIPCIONES];
-    int tope;
-
-} colInscripciones;
 
 int obtenerId();
 
@@ -270,18 +262,17 @@ void menuAgregarInscipcion()
                 cin >> mes;
                 cout << "Anio: ";
                 cin >> anio;
-                
+
                 try
                 {
-                    Fecha fecha = Fecha(dia,mes,anio);
-                    agregarInscripcion(socio,clase,fecha);
+                    Fecha fecha = Fecha(dia, mes, anio);
+                    agregarInscripcion(socio, clase, fecha);
                 }
-                catch(const std::exception& e)
+                catch (const std::exception &e)
                 {
                     std::cerr << e.what() << '\n';
                     system("sleep 5");
                 }
-                
             }
             else
             {
@@ -302,19 +293,16 @@ void menuAgregarInscipcion()
 void agregarInscripcion(string ciSocio, int idClase, Fecha fecha)
 {
 
-    //Inscripcion * inscripcion = new Inscripcion (fecha,ciSocio,idClase);   
-
-
-
-
-
-
-
-
-
-
-
-
+    int i = 0;
+    while (colSocios.s[i]->getCi() != ciSocio)
+        i++;
+    int j = 0;
+    while (colClases.c[j]->getId() != idClase)
+        j++;
+    Inscripcion *inscripcion = new Inscripcion(fecha, colSocios.s[i]);
+    colClases.c[j]->agregarInscripcion(inscripcion);
+    cout << "Inscripcion agregada con exito.\n";
+    system("sleep 1");
 
     /*
         Crea una inscripción de un socio a una clase. La inscripción tiene lugar siempre y cuando el socio y
@@ -323,9 +311,23 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha)
         levanta una excepción std::invalid_argument.
     */
 }
+void borrarInscripcion(string ciSocio, int idClase);
+
+void menuBorrarInscripcion()
+{
+    int i;
+    cout << "___________________________" << endl;
+    cout << "_____BORRAR INSCRIPCION____" << endl;
+
+    while (i > colSocios.tope)
+    {
+        /* code */
+    }
+}
 
 void borrarInscripcion(string ciSocio, int idClase)
 {
+
     /*
         Borra la inscripción de un socio a una clase. Si no existe una inscripción de ese usuario para esa
         clase, se levanta una excepción std::invalid_argument.
@@ -359,10 +361,11 @@ int main()
             cin >> opcion;
             break;
         case 4:
-            // listarVengadores();
+            menuBorrarInscripcion();
+            menu();
+            cin >> opcion;
             break;
         }
     }
-    cout << "CHAU!!!\n"
-         << endl;
+    cout << "CHAU!!!\n";
 }

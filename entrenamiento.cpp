@@ -3,7 +3,7 @@
 
 Entrenamiento::Entrenamiento() {}
 
-Entrenamiento::Entrenamiento(int id, string nombre, Turno turno,bool enRambla):Clase(id, nombre, turno)
+Entrenamiento::Entrenamiento(int id, string nombre, Turno turno, bool enRambla) : Clase(id, nombre, turno)
 {
     this->enRambla = enRambla;
 }
@@ -20,20 +20,15 @@ void Entrenamiento::setEnRambla(bool enRambla)
 
 int Entrenamiento::cupo()
 {
-   /* int cupo;
+
     if (this->enRambla)
     {
-        cupo = 20 - colInscripciones.tope;
-        colInscripciones.tope ++;
-        return cupo;
-    }else
+        return 20 - this->getTope();
+    }
+    else
     {
-        cupo = 10 - colInscripciones.tope;
-        colInscripciones.tope ++;
-        return cupo;
-    }*/
-    
-    
+        return 10 - this->getTope();
+    }
 
     // Operación que calcula la cantidad de cupos que tiene una clase
     // Si la clase es en la rambla, el cupo es de 20 personas

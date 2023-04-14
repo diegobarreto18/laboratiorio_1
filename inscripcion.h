@@ -6,9 +6,6 @@
 #include "define.h"
 #include "socio.h"
 #include "Fecha.h"
-#include "clase.h"
-
-
 
 using namespace std;
 
@@ -16,21 +13,18 @@ class Inscripcion
 {
 private:
     Fecha fecha;
-    Socio* socio;
-    Clase* clase;
+    Socio *socio;
 
 public:
     Inscripcion();
-    Inscripcion(Fecha fecha, Socio* socio, Clase* clase);
+    Inscripcion(Fecha fecha, Socio *socio);
     Fecha getFecha();
-    void setFecha(int dia,int mes,int anio, Fecha & fecha);
-    Socio * getSocio();
-    void setSocio(Socio* socio);
-    Clase * getClase();
-    void setClase(Clase * clase);
+    void setFecha(int dia, int mes, int anio, Fecha &fecha);
+    Socio *getSocio();
+    void setSocio(Socio *socio);
     ~Inscripcion();
 
-    DtSocio * getDtSocio();
+    DtSocio *getDtSocio();
 };
 
 #endif

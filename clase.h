@@ -5,7 +5,8 @@
 #include <iostream>
 #include <string.h>
 #include "DtClase.h"
-
+#include "inscripcion.h"
+#define MAX_INSCRIPCIONES 100
 
 
 using namespace std;
@@ -16,7 +17,8 @@ private:
     int id;
     string nombre;
     Turno turno;
-
+    Inscripcion * inscripciones[MAX_INSCRIPCIONES];
+    int tope;
 public:
     Clase();
     Clase(int id, string nombre, Turno turno);
@@ -27,7 +29,11 @@ public:
     Turno getTurno();
     void setTurno(Turno turno);
     ~Clase();
+
     virtual int cupo() = 0;
+    int getTope();
+    void agregarInscripcion(Inscripcion * inscripcion);
+
 };
 
 #endif

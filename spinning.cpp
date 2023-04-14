@@ -5,7 +5,7 @@ using namespace std;
 
 Spinning::Spinning() {}
 
-Spinning::Spinning(int id, string nombre, Turno turno,int cantBicicletas):Clase(id, nombre, turno)
+Spinning::Spinning(int id, string nombre, Turno turno, int cantBicicletas) : Clase(id, nombre, turno)
 
 {
   this->cantBicicletas = cantBicicletas;
@@ -22,11 +22,7 @@ void Spinning::setCantBicicletas(int cantBicicletas)
 
 int Spinning::cupo()
 {
- /* int cupo;
-  cupo = this->cantBicicletas - colInscripciones.tope;
-  colInscripciones.tope ++;
-  return cupo;*/
-
+  return this->cantBicicletas - this->getTope();
 
   // Operación que calcula la cantidad de cupos que tiene una clase
 
