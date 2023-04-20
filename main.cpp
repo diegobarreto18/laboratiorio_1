@@ -234,7 +234,7 @@ void menuAgregarInscipcion()
 
     system("clear");
     cout << "___________________________" << endl;
-    cout << "____AGREGAR INSCRIPCION___" << endl;
+    cout << "____AGREGAR INSCRIPCION____" << endl;
     string socio;
     cout << "Socio Ci: ";
     cin >> socio;
@@ -341,7 +341,7 @@ void borrarInscripcion(string ciSocio, int idClase)
         i++;
     }
     colClases.c[i]->eliminarInscripcion(ciSocio);
-    cout << "Inscripcion agregada con exito.\n";
+    cout << "Inscripcion borrada con exito.\n";
     system("sleep 1");
     /*
         Borra la inscripción de un socio a una clase. Si no existe una inscripción de ese usuario para esa
