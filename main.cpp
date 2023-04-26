@@ -333,6 +333,11 @@ void menuBorrarInscripcion()
     }
 }
 
+void menuImpresion(){
+
+
+}
+
 void borrarInscripcion(string ciSocio, int idClase)
 {
     int i = 0;

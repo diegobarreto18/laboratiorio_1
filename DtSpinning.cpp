@@ -25,3 +25,9 @@ DtClase* DtSpinning :: getDtClase(){
   DtSpinning* dtspinning = new DtSpinning(this->getId(),this->getNombre(),this->getTurno(),this->getCantBicicletas());
   return dtspinning;
 }
+
+ostream& operator << (ostream& salida, DtSpinning& spinning){
+     DtClase &dts = dynamic_cast<DtClase &>(spinning);
+     cout << dts << "Cant Bicicletas: " << spinning.cantBicicletas << endl;
+     return salida;
+}

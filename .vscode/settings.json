@@ -6,6 +6,7 @@
         "ostream": "cpp",
         "stdexcept": "cpp",
         "makefile": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "iosfwd": "cpp"
     }
 }

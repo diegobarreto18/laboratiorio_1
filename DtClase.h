@@ -27,6 +27,7 @@ public:
     ~DtClase();
     int cupo();
     virtual DtClase *getDtClase() = 0;
+    friend ostream& operator << (ostream&, const DtClase&);
 };
 
 #endif

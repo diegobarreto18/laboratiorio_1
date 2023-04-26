@@ -19,5 +19,7 @@ public:
     void setCantBicicletas(int cantBicicletas);
     ~DtSpinning();
     DtClase* getDtClase();
+    friend ostream& operator <<(ostream&, DtSpinning&);
+
 };
 #endif

@@ -19,6 +19,7 @@ class DtEntrenamiento: public DtClase
         void setEnRambla(bool enRambla);
         ~DtEntrenamiento();
         DtClase* getDtClase();
+        friend ostream &operator <<(ostream&, DtEntrenamiento&);
 
 };
 

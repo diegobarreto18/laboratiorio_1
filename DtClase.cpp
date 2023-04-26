@@ -38,3 +38,7 @@ void DtClase::setTurno(Turno turno)
 
 DtClase::~DtClase() {}
 
+ostream& operator << (ostream& salida, const DtClase& clase){
+  cout << " Id Clase: " << clase.id << "\n" << " Nombre: " << clase.nombre << "\n" << " Turno: "<< clase.turno << endl;
+}
+

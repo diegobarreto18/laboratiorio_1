@@ -26,7 +26,6 @@ public:
     ~Fecha();
 
 
-
     /*friend ostream& operator << (ostream&,Fecha&);
     friend bool operator ==(const Fecha&, const Fecha&);
     friend bool operator <(const Fecha&,const Fecha&);*/

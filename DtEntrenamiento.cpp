@@ -24,3 +24,14 @@ DtClase* DtEntrenamiento :: getDtClase(){
   DtEntrenamiento* dtentrenamiento = new DtEntrenamiento(this->getId(),this->getNombre(),this->getTurno(),this->getEnRambla());
   return dtentrenamiento;
 }
+
+ostream &operator <<(ostream &salida, DtEntrenamiento& entrenamiento){
+  DtClase &dte = dynamic_cast<DtClase &>(entrenamiento);
+  if (entrenamiento.enRambla == true){
+      cout << dte << "En rambla: " << "Si" << endl;
+  }else{
+      cout << dte << "En rambla: " << "No" << endl;
+  }
+ 
+  return salida;
+}
