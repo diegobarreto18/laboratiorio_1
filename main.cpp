@@ -354,12 +354,24 @@ DtClase **listarClases(int &cantClases);
 void menuListarClases()
 {
     system("clear");
-    cout << "___________________________" << endl;
-    cout << "__________CLASES___________" << endl;
+    cout << "____________________________" << endl;
+    cout << "___________CLASES___________" << endl;
     int cantClases;
     DtClase **clases = listarClases(cantClases);
     for (int i = 0; i < cantClases; i++)
-        cout << *clases[i] << endl;
+    {
+        DtSpinning *spinning = dynamic_cast<DtSpinning *>(clases[i]);
+        if (spinning != NULL)
+        {
+            cout << *spinning << endl;
+        }
+        else
+        {
+            DtEntrenamiento *entrenamiento = dynamic_cast<DtEntrenamiento *>(clases[i]);
+            if (entrenamiento != NULL)
+                cout << *entrenamiento << endl;
+        }
+    }
     cout << endl;
     system("sleep 5");
 }
@@ -403,30 +415,22 @@ int main()
         {
         case 1:
             menuAgregarSocio();
-            menu();
-            cin >> opcion;
             break;
         case 2:
             menuAgregarClase();
-            menu();
-            cin >> opcion;
             break;
         case 3:
             menuAgregarInscipcion();
-            menu();
-            cin >> opcion;
             break;
         case 4:
             menuBorrarInscripcion();
-            menu();
-            cin >> opcion;
             break;
         case 5:
             menuListarClases();
-            menu();
-            cin >> opcion;
             break;
         }
+        menu();
+        cin >> opcion;
     }
     cout << "CHAU!!!\n";
 }
