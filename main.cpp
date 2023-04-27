@@ -42,7 +42,8 @@ void menu()
     cout << "2. Agregar Clase" << endl;
     cout << "3. Agregar Inscripcion" << endl;
     cout << "4. Borrar Inscripcion" << endl;
-    cout << "5. Salir" << endl;
+    cout << "5. Listar Clases" << endl;
+    cout << "6. Salir" << endl;
     cout << "OPCION: ";
 }
 
@@ -333,11 +334,6 @@ void menuBorrarInscripcion()
     }
 }
 
-void menuImpresion(){
-
-
-}
-
 void borrarInscripcion(string ciSocio, int idClase)
 {
     int i = 0;
@@ -353,6 +349,46 @@ void borrarInscripcion(string ciSocio, int idClase)
         clase, se levanta una excepción std::invalid_argument.
     */
 }
+DtClase **listarClases(int &cantClases);
+
+void menuListarClases()
+{
+    system("clear");
+    cout << "___________________________" << endl;
+    cout << "__________CLASES___________" << endl;
+    int cantClases;
+    DtClase **clases = listarClases(cantClases);
+    for (int i = 0; i < cantClases; i++)
+        cout << *clases[i] << endl;
+    cout << endl;
+    system("sleep 5");
+}
+
+DtClase **listarClases(int &cantClases)
+{
+    cantClases = colClases.tope;
+    DtClase **listado = new DtClase *[cantClases];
+    for (int i = 0; i < colClases.tope; i++)
+    {
+        if (Spinning *t = dynamic_cast<Spinning *>(colClases.c[i]))
+        {
+            DtSpinning *dts = new DtSpinning(t->getId(),
+                                             t->getNombre(),
+                                             t->getTurno(),
+                                             t->getCantBicicletas());
+            listado[i] = dts;
+        }
+        else if (Entrenamiento *e = dynamic_cast<Entrenamiento *>(colClases.c[i]))
+        {
+            DtEntrenamiento *dte = new DtEntrenamiento(e->getId(),
+                                                       e->getNombre(),
+                                                       e->getTurno(),
+                                                       e->getEnRambla());
+            listado[i] = dte;
+        }
+    }
+    return listado;
+}
 
 int main()
 {
@@ -361,7 +397,7 @@ int main()
     menu();
     int opcion;
     cin >> opcion;
-    while (opcion != 5)
+    while (opcion != 6)
     {
         switch (opcion)
         {
@@ -382,6 +418,11 @@ int main()
             break;
         case 4:
             menuBorrarInscripcion();
+            menu();
+            cin >> opcion;
+            break;
+        case 5:
+            menuListarClases();
             menu();
             cin >> opcion;
             break;

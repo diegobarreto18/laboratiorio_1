@@ -38,7 +38,24 @@ void DtClase::setTurno(Turno turno)
 
 DtClase::~DtClase() {}
 
-ostream& operator << (ostream& salida, const DtClase& clase){
-  cout << " Id Clase: " << clase.id << "\n" << " Nombre: " << clase.nombre << "\n" << " Turno: "<< clase.turno << endl;
-}
+ostream &operator<<(ostream &salida, const DtClase &clase)
+{
+  /*string NomTurno;
+  if (clase.turno == 0)
+  {
+    NomTurno = "Mañana";
+  }
+  else if (clase.turno == 1)
+  {
+    NomTurno = "Tarde";
+  }
+  else
+  {
+    NomTurno = "Noche";
+  }*/
+  
 
+  cout << " Id Clase: " << clase.id << "\n"
+       << " Nombre: " << clase.nombre << "\n"
+       << " Turno: " << clase.turno << endl;
+}
