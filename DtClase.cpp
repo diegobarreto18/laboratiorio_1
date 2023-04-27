@@ -40,22 +40,22 @@ DtClase::~DtClase() {}
 
 ostream &operator<<(ostream &salida, const DtClase &clase)
 {
-  /*string NomTurno;
   if (clase.turno == 0)
   {
-    NomTurno = "Mañana";
+    cout << " Id Clase: " << clase.id << "\n"
+         << " Nombre: " << clase.nombre << "\n"
+         << " Turno: Mañana" << endl;
   }
   else if (clase.turno == 1)
   {
-    NomTurno = "Tarde";
+    cout << " Id Clase: " << clase.id << "\n"
+         << " Nombre: " << clase.nombre << "\n"
+         << " Turno: Tarde" << endl;
   }
   else
   {
-    NomTurno = "Noche";
-  }*/
-  
-
-  cout << " Id Clase: " << clase.id << "\n"
-       << " Nombre: " << clase.nombre << "\n"
-       << " Turno: " << clase.turno << endl;
+    cout << " Id Clase: " << clase.id << "\n"
+         << " Nombre: " << clase.nombre << "\n"
+         << " Turno: Noche" << endl;
+  }
 }
